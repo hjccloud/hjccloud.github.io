@@ -152,6 +152,101 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Mybatis流程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/01/Mybatis%E6%B5%81%E7%A8%8B/">Mybatis流程</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/01/Mybatis%E6%B5%81%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2020-06-01T09:55:04.990Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Mybatis框架"><a href="#Mybatis框架" class="headerlink" title="Mybatis框架"></a>Mybatis框架</h2><blockquote>
+<p>从读取配置文件到生成代理dao再到执行crud操作基本流程</p>
+</blockquote>
+<ol>
+<li>加载pom.xml配置文件，返回该资源的输入流</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">in = Resources.getResourceAsStream(<span class="string">"SqlConfig.xml"</span>);</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>利用该输入流交给构建者，构建者利用XMLConfigruation工具类得到Configuration对象，并返回工厂对象（以该Configruation对象构建）（XMLConfigruation要么是利用XML配置文件中mapper标签的内容（另一个配置文件的名称，利用该配置文件把里面的namespace（全限定类）和id（方法名）组合作为键，把文本（sql语句）和resultType设置给mapper对象，最后装入一个Configration的map中）获取key和值，要不就是利用注解获取（注解的属性值（sql语句），方法的具体的泛型返回类型同样设置给mapper对象，利用method的getName()和method.getDeclaringClass().getName()同样得到了该方法的全限定类名和方法名作为键）</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SqlSessionFactoryBuilder builder = <span class="keyword">new</span> SqlSessionFactoryBuilder();</span><br><span class="line">     SqlSessionFactory factory = builder.build(in);</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>使用工厂生产SqlSession对象</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">session = factory.openSession(<span class="keyword">true</span>);</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><p>使用SqlSession创建Dao接口的代理对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">userDao = session.getMapper(UserDao<span class="class">.<span class="keyword">class</span>)</span>;</span><br></pre></td></tr></table></figure>
+
+<p>​        </p>
+</li>
+<li><p>执行方法，会自动执行invoke方法</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;User&gt; users = userDao.findAll();</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/01/Mybatis%E6%B5%81%E7%A8%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

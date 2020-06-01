@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>我的第一篇博客文章 | Hexo</title>
+  <title>Mybatis流程 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="111">
+  <meta name="description" content="Mybatis框架 从读取配置文件到生成代理dao再到执行crud操作基本流程   加载pom.xml配置文件，返回该资源的输入流  1in &#x3D; Resources.getResourceAsStream(&quot;SqlConfig.xml&quot;);   利用该输入流交给构建者，构建者利用XMLConfigruation工具类得到Configuration对象，并返回工厂对象（以该Configruation">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博客文章">
-<meta property="og:url" content="http://yoursite.com/2020/05/31/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/index.html">
+<meta property="og:title" content="Mybatis流程">
+<meta property="og:url" content="http://yoursite.com/2020/06/01/Mybatis%E6%B5%81%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="111">
+<meta property="og:description" content="Mybatis框架 从读取配置文件到生成代理dao再到执行crud操作基本流程   加载pom.xml配置文件，返回该资源的输入流  1in &#x3D; Resources.getResourceAsStream(&quot;SqlConfig.xml&quot;);   利用该输入流交给构建者，构建者利用XMLConfigruation工具类得到Configuration对象，并返回工厂对象（以该Configruation">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-31T14:30:38.000Z">
-<meta property="article:modified_time" content="2020-05-31T14:32:15.185Z">
+<meta property="article:published_time" content="2020-06-01T09:55:04.990Z">
+<meta property="article:modified_time" content="2020-06-01T09:54:26.380Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -154,27 +154,59 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-我的第一篇博客文章" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Mybatis流程" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      我的第一篇博客文章
+      Mybatis流程
     </h1>
   
 
         
-        <a href="/2020/05/31/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-05-31T14:30:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-31</time>
+        <a href="/2020/06/01/Mybatis%E6%B5%81%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2020-06-01T09:55:04.990Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>111</p>
+        <h2 id="Mybatis框架"><a href="#Mybatis框架" class="headerlink" title="Mybatis框架"></a>Mybatis框架</h2><blockquote>
+<p>从读取配置文件到生成代理dao再到执行crud操作基本流程</p>
+</blockquote>
+<ol>
+<li>加载pom.xml配置文件，返回该资源的输入流</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">in = Resources.getResourceAsStream(<span class="string">"SqlConfig.xml"</span>);</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>利用该输入流交给构建者，构建者利用XMLConfigruation工具类得到Configuration对象，并返回工厂对象（以该Configruation对象构建）（XMLConfigruation要么是利用XML配置文件中mapper标签的内容（另一个配置文件的名称，利用该配置文件把里面的namespace（全限定类）和id（方法名）组合作为键，把文本（sql语句）和resultType设置给mapper对象，最后装入一个Configration的map中）获取key和值，要不就是利用注解获取（注解的属性值（sql语句），方法的具体的泛型返回类型同样设置给mapper对象，利用method的getName()和method.getDeclaringClass().getName()同样得到了该方法的全限定类名和方法名作为键）</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SqlSessionFactoryBuilder builder = <span class="keyword">new</span> SqlSessionFactoryBuilder();</span><br><span class="line">     SqlSessionFactory factory = builder.build(in);</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>使用工厂生产SqlSession对象</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">session = factory.openSession(<span class="keyword">true</span>);</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><p>使用SqlSession创建Dao接口的代理对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">userDao = session.getMapper(UserDao<span class="class">.<span class="keyword">class</span>)</span>;</span><br></pre></td></tr></table></figure>
+
+<p>​        </p>
+</li>
+<li><p>执行方法，会自动执行invoke方法</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;User&gt; users = userDao.findAll();</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 
       
 
@@ -254,7 +286,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/31/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/01/Mybatis%E6%B5%81%E7%A8%8B/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -268,18 +300,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/06/01/Mybatis%E6%B5%81%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Mybatis流程
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/05/31/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2020/05/31/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我的第一篇博客文章</div>
       <i class="icon-circle-right"></i>
     </a>
   
