@@ -6,36 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Git | inspire</title>
+  <title>Spring-Boot学习二 | inspire</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="git 基本操作">
+  <meta name="description" content="Spring-Boot学习二springboot的自动配置及自动配置原理还有日志的使用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git">
-<meta property="og:url" content="http://yoursite.com/2020/06/04/Git/index.html">
+<meta property="og:title" content="Spring-Boot学习二">
+<meta property="og:url" content="http://yoursite.com/2020/05/21/Spring-Boot%E5%AD%A6%E4%B9%A0%E4%BA%8C/index.html">
 <meta property="og:site_name" content="inspire">
-<meta property="og:description" content="git 基本操作">
+<meta property="og:description" content="Spring-Boot学习二springboot的自动配置及自动配置原理还有日志的使用">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/fdc20d9adc5b4db7b84f1d8bf5cda400-124524">
-<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/24b6d915a59dfee89019d303e78c5419-669636">
-<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/9dac63bc74e47157ca16687ca5e99c13-1708">
-<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/919e991fa966fb22cc24474d7add34b7-2908">
-<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/889a54dc56993a9c02b1019845823d35-2570">
-<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/6c9c0896c97abe12338cad63fcefdf7e-111355">
-<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/b2c69f96a4a11a4501c94d381e255d23-142743">
-<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/5aff055aef1a059451c7904967c0b36b-130705">
-<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/0e9351aea39e901789609cedb9c6f0ed-652455">
-<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/c22ad78f2c500bf8969f6316bc788ec3-449038">
-<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/60ad616c74a135e518e5a3670e7ebed4-303478">
-<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/75baefef360463d84319022fd5618b71-48662">
-<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/04c3ebd87b3f7d212730d5f2d1157326-58836">
-<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/b393cc2dc8c673f42b1c933486876ef4-12927">
-<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/356425cb506d3f66c212543954c7c24a-30314">
-<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/066bc341a4468e7edbf7daeb7242711f-1244210">
-<meta property="article:published_time" content="2020-06-04T08:30:35.079Z">
-<meta property="article:modified_time" content="2020-06-04T08:30:58.185Z">
+<meta property="article:published_time" content="2020-05-21T07:13:54.000Z">
+<meta property="article:modified_time" content="2020-06-05T09:24:30.242Z">
 <meta property="article:author" content="Pro He">
+<meta property="article:tag" content="Spring Boot">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/fdc20d9adc5b4db7b84f1d8bf5cda400-124524">
   
     <link rel="alternative" href="/atom.xml" title="inspire" type="application/atom+xml">
   
@@ -187,119 +171,170 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Git" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Spring-Boot学习二" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Git
+      Spring-Boot学习二
     </h1>
   
 
         
-        <a href="/2020/06/04/Git/" class="archive-article-date">
-  	<time datetime="2020-06-04T08:30:35.079Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-04</time>
+        <a href="/2020/05/21/Spring-Boot%E5%AD%A6%E4%B9%A0%E4%BA%8C/" class="archive-article-date">
+  	<time datetime="2020-05-21T07:13:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="git-基本操作"><a href="#git-基本操作" class="headerlink" title="git 基本操作"></a>git 基本操作</h3><a id="more"></a>
+        <h2 id="Spring-Boot学习二"><a href="#Spring-Boot学习二" class="headerlink" title="Spring-Boot学习二"></a>Spring-Boot学习二</h2><p>springboot的自动配置及自动配置原理还有日志的使用</p>
+<hr>
+<a id="more"></a>
 
-<h4 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h4><blockquote>
-<p>git常用命令及运行图</p>
-</blockquote>
-<p><img src="https://app.yinxiang.com/FileSharing.action?hash=1/fdc20d9adc5b4db7b84f1d8bf5cda400-124524" alt="img"></p>
-<p>​    2. git下载</p>
-<p>​      <a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com</a>  </p>
-<ol start="3">
-<li>git 注册登陆</li>
-</ol>
+<p>@<strong>SpringBootApplication</strong>:    Spring Boot应用标注在某个类上说明这个类是SpringBoot的主配置类，SpringBoot就应该运行这个类的main方法来启动SpringBoot应用；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.TYPE)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Inherited</span></span><br><span class="line"><span class="meta">@SpringBootConfiguration</span></span><br><span class="line"><span class="meta">@EnableAutoConfiguration</span></span><br><span class="line"><span class="meta">@ComponentScan</span>(excludeFilters = &#123;</span><br><span class="line">      <span class="meta">@Filter</span>(type = FilterType.CUSTOM, classes = TypeExcludeFilter<span class="class">.<span class="keyword">class</span>),</span></span><br><span class="line"><span class="class">      @<span class="title">Filter</span>(<span class="title">type</span> </span>= FilterType.CUSTOM, classes = AutoConfigurationExcludeFilter<span class="class">.<span class="keyword">class</span>) &#125;)</span></span><br><span class="line"><span class="class"><span class="title">public</span> @<span class="title">interface</span> <span class="title">SpringBootApplication</span> </span>&#123;</span><br></pre></td></tr></table></figure>
+
+<p>@<strong>SpringBootConfiguration</strong>:Spring Boot的配置类；</p>
+<p>​        标注在某个类上，表示这是一个Spring Boot的配置类；</p>
+<p>​        @<strong>Configuration</strong>:配置类上来标注这个注解；</p>
+<p>​            配置类 —–  配置文件；配置类也是容器中的一个组件；@Component</p>
+<p>@<strong>EnableAutoConfiguration</strong>：开启自动配置功能；</p>
+<p>​        以前我们需要配置的东西，Spring Boot帮我们自动配置；@<strong>EnableAutoConfiguration</strong>告诉SpringBoot开启自动配置功能；这样自动配置才能生效；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@AutoConfigurationPackage</span></span><br><span class="line"><span class="meta">@Import</span>(EnableAutoConfigurationImportSelector<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class"><span class="title">public</span> @<span class="title">interface</span> <span class="title">EnableAutoConfiguration</span> </span>&#123;</span><br></pre></td></tr></table></figure>
+
+<p>​          <strong>@EnableAutoConfiguration 作用：</strong></p>
 <ul>
-<li><strong>从git克隆仓库到本地：git→本地</strong></li>
+<li>利用EnableAutoConfigurationImportSelector给容器中导入一些组件？</li>
 </ul>
-<p>​    <strong>github创建仓库（repositories）：</strong>设置时默认创建read.md ，可预设格式（如java）</p>
-<p>​    <strong>github创建ssh密钥：</strong></p>
-<p>​    1.在本地创建工作区（文件夹），然后右键-git bash here ；</p>
-<p>​    2.在弹出的窗口输入 <strong>$ ssh-keygen -t rsa -b 4096 -C “your_ emai L@example. com”</strong>，连续回车</p>
-<p>​    3.继续输入 <strong>ssh/id rsa. pub</strong>，没有报错即成功 </p>
-<p>​    4.终端中有公共密钥和私有密钥的路径， 路径里找到 .ssh 目录，里面有 id_rsa 和 id_rsa.pub 两个文件，这两个就是SSH Key 的秘钥对，<strong>id_rsa 是私钥，不能泄露出去</strong>，id_rsa.pub是公钥，可以放心地告诉任何人。用记事本打开 id_rsa.pub（C:\Users\Administrator.ssh），复制ssh key 公钥。 </p>
-<p>​    <img src="https://app.yinxiang.com/FileSharing.action?hash=1/24b6d915a59dfee89019d303e78c5419-669636" alt="img"></p>
-<p>​     5.回到github，点击头像找到<img src="https://app.yinxiang.com/FileSharing.action?hash=1/9dac63bc74e47157ca16687ca5e99c13-1708" alt="img">)并点击，再点击左边的<img src="https://app.yinxiang.com/FileSharing.action?hash=1/919e991fa966fb22cc24474d7add34b7-2908" alt="img">)，点击右边的<img src="https://app.yinxiang.com/FileSharing.action?hash=1/889a54dc56993a9c02b1019845823d35-2570" alt="img"></p>
-<p> <img src="https://app.yinxiang.com/FileSharing.action?hash=1/6c9c0896c97abe12338cad63fcefdf7e-111355" alt="img"></p>
-<p>​     </p>
-<p>  写好title，黏贴刚刚得到的密钥，生成SSH密钥</p>
-<p><img src="https://app.yinxiang.com/FileSharing.action?hash=1/b2c69f96a4a11a4501c94d381e255d23-142743" alt="img"></p>
-<p>​    <strong>克隆仓库</strong></p>
-<p>​    \1. 回到刚刚新建的仓库，点击clone，点击use ssh，复制链接</p>
-<p>​     <img src="https://app.yinxiang.com/FileSharing.action?hash=1/5aff055aef1a059451c7904967c0b36b-130705" alt="img"></p>
-<p>   2.在刚刚打开的gitbash窗口，输入 <strong>$ git clone + 刚刚复制的链接</strong>，回车，克隆成功！</p>
 <ul>
-<li><strong>本地上传文件到github：本地→github</strong></li>
-</ul>
-<p>​    1.在本地工作区中右键-git bash here ；</p>
-<p>​    2.输入 <strong>$ git status</strong> 查看状态，其中untracked files 下的内容是未提交到git的文件</p>
-<p><img src="https://app.yinxiang.com/FileSharing.action?hash=1/0e9351aea39e901789609cedb9c6f0ed-652455" alt="img"></p>
-<p>​    3. 上传跟踪项目文件夹中的所有文件和文件夹 ：</p>
-<p>​     输入 <strong>$ git add .</strong> </p>
-<p>​      上传文件： </p>
-<p>​     输入 <strong>$ git add xxx.txt</strong></p>
-<p><strong>（这里可以加一步，当你不知道该怎么写可以直接先commit，这样会提示你</strong></p>
-<p><strong>（提交）git commit  -m “commit first”</strong></p>
-<p> <strong>Please tell me who you are.</strong></p>
-<p><strong>Run</strong></p>
-<p>  <strong>git config –global user.email “<a href="mailto:you@example.com">you@example.com</a>“</strong><br>  <strong>git config –global user.name “Your Name”）</strong></p>
-<p>​    4.<strong>绑定github账号：</strong></p>
-<p>​     输入 <strong>$ git config –global user . email “you@example. com</strong> 和</p>
-<p>​         <strong>$ git config-g lobal user. name Your Name”</strong> </p>
-<p>​    \5. <strong>commit</strong> :</p>
-<p>​     输入 <strong>$ git commit -m ‘ XXXX文件描述’</strong></p>
-<p>​    \6. <strong>push ：</strong></p>
-<p>​     输入 <strong>$git push，</strong>成功上传</p>
+<li><p>可以查看selectImports()方法的内容；</p>
+</li>
+<li><p>List<String> configurations = getCandidateConfigurations(annotationMetadata,      attributes);获取候选的配置</p>
 <ul>
-<li><p><strong>解决冲突</strong></p>
-<p> <strong>git push时若提醒非最新版本，如下图：</strong></p>
+<li><pre><code class="java">SpringFactoriesLoader.loadFactoryNames()
+扫描所有jar包类路径下  META-INF/spring.factories
+把扫描到的这些文件的内容包装成properties对象
+从properties中获取到EnableAutoConfiguration<span class="class">.<span class="keyword">class</span>类（类名）对应的值，然后把他们添加在容器中</span>
+<span class="class"></span>
+<span class="class"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">@**AutoConfigurationPackage**：自动配置包</span><br><span class="line"></span><br><span class="line">​		@**Import**(AutoConfigurationPackages.Registrar.class)：</span><br><span class="line"></span><br><span class="line">​		Spring的底层注解@Import，给容器中导入一个组件；导入的组件由AutoConfigurationPackages.Registrar.class；</span><br><span class="line"></span><br><span class="line">**将主配置类（@SpringBootApplication标注的类）的所在包及下面所有子包里面的所有组件扫描到Spring容器；**</span><br><span class="line"></span><br><span class="line">​	@**Import**(EnableAutoConfigurationImportSelector.class)；</span><br><span class="line"></span><br><span class="line">​		给容器中导入组件？</span><br><span class="line"></span><br><span class="line">​		**EnableAutoConfigurationImportSelector**：导入哪些组件的选择器；</span><br><span class="line"></span><br><span class="line">​		将所有需要导入的组件以全类名的方式返回；这些组件就会被添加到容器中；</span><br><span class="line"></span><br><span class="line">​		会给容器中导入非常多的自动配置类（xxxAutoConfiguration）；</span><br><span class="line"></span><br><span class="line">**将 类路径下  META-INF&#x2F;spring.factories 里面配置的所有EnableAutoConfiguration的值加入到了容器中；**就是给容器中导入这个场景需要的所有组件，并配置好这些组件；		![自动配置类](C:&#x2F;Users&#x2F;TEMP.DESKTOP-OQFRHA8&#x2F;Desktop&#x2F;Spring Boot 笔记&#x2F;images&#x2F;搜狗截图20180129224104.png)</span><br><span class="line"></span><br><span class="line">有了自动配置类，免去了我们手动编写配置注入功能组件等的工作；</span><br><span class="line"></span><br><span class="line">​		SpringFactoriesLoader.loadFactoryNames(EnableAutoConfiguration.class,classLoader)；</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">**Spring Boot在启动的时候从类路径下的META-INF&#x2F;spring.factories中获取EnableAutoConfiguration指定的值，将这些值作为自动配置类导入到容器中，自动配置类就生效，帮我们进行自动配置工作；**以前我们需要自己配置的东西，自动配置类都帮我们配置好了。</span><br><span class="line"></span><br><span class="line">下面以**HttpEncodingAutoConfiguration（Http编码自动配置）**为例解释自动配置原理；</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;java</span><br><span class="line">@Configuration   &#x2F;&#x2F;表示这是一个配置类，以前编写的配置文件一样，也可以给容器中添加组件</span><br><span class="line">@EnableConfigurationProperties(HttpEncodingProperties.class)  &#x2F;&#x2F;启动指定类的ConfigurationProperties功能；将配置文件中对应的值和HttpEncodingProperties绑定起来；并把HttpEncodingProperties加入到ioc容器中</span><br><span class="line"></span><br><span class="line">@ConditionalOnWebApplication &#x2F;&#x2F;Spring底层@Conditional注解吗，根据不同的条件，如果满足指定的条件，整个配置类里面的配置就会生效；    判断当前应用是否是web应用，如果是，当前配置类生效</span><br><span class="line"></span><br><span class="line">@ConditionalOnClass(CharacterEncodingFilter.class)  &#x2F;&#x2F;判断当前项目有没有这个类CharacterEncodingFilter；SpringMVC中进行乱码解决的过滤器；</span><br><span class="line"></span><br><span class="line">@ConditionalOnProperty(prefix &#x3D; &quot;spring.http.encoding&quot;, value &#x3D; &quot;enabled&quot;, matchIfMissing &#x3D; true)  &#x2F;&#x2F;判断配置文件中是否存在某个配置  spring.http.encoding.enabled；如果不存在，判断也是成立的</span><br><span class="line">&#x2F;&#x2F;即使我们配置文件中不配置pring.http.encoding.enabled&#x3D;true，也是默认生效的；</span><br><span class="line">public class HttpEncodingAutoConfiguration &#123;</span><br><span class="line"></span><br><span class="line">  	&#x2F;&#x2F;他已经和SpringBoot的配置文件映射了</span><br><span class="line">  	private final HttpEncodingProperties properties;</span><br><span class="line"></span><br><span class="line">   &#x2F;&#x2F;只有一个有参构造器的情况下，参数的值就会从容器中拿</span><br><span class="line">  	public HttpEncodingAutoConfiguration(HttpEncodingProperties properties) &#123;</span><br><span class="line">		this.properties &#x3D; properties;</span><br><span class="line">	&#125;</span><br><span class="line">@Bean   &#x2F;&#x2F;给容器中添加一个组件，这个组件的某些值需要从properties中获取</span><br><span class="line">@ConditionalOnMissingBean(CharacterEncodingFilter.class) &#x2F;&#x2F;判断容器没有这个组件</span><br><span class="line">public CharacterEncodingFilter characterEncodingFilter() &#123;</span><br><span class="line">	CharacterEncodingFilter filter &#x3D; new OrderedCharacterEncodingFilter();</span><br><span class="line">	filter.setEncoding(this.properties.getCharset().name());</span><br><span class="line">	filter.setForceRequestEncoding(this.properties.shouldForce(Type.REQUEST));</span><br><span class="line">	filter.setForceResponseEncoding(this.properties.shouldForce(Type.RESPONSE));</span><br><span class="line">	return filter;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></span>
+<span class="class">根据当前不同的条件判断，决定这个配置类是否生效</span>
+<span class="class"></span></code></pre>
 </li>
 </ul>
-<p><img src="https://app.yinxiang.com/FileSharing.action?hash=1/c22ad78f2c500bf8969f6316bc788ec3-449038" alt="img"></p>
-<p><strong>则需要解决冲突，输入git pull ，会提示哪个冲突文件已经合并</strong></p>
-<p><img src="https://app.yinxiang.com/FileSharing.action?hash=1/60ad616c74a135e518e5a3670e7ebed4-303478" alt="img"></p>
-<p><strong>git status会提示你可以做两个操作，一个是解决冲突conflg后commit提交，一个是合并git merge</strong></p>
-<p><img src="https://app.yinxiang.com/FileSharing.action?hash=1/75baefef360463d84319022fd5618b71-48662" alt="img"></p>
-<p><strong>打开冲突文件，可以看到多了冲突内容，只要删除红框内容保存文件即为解决冲突，按正常流程add →commit→ push即可</strong></p>
-<p><img src="https://app.yinxiang.com/FileSharing.action?hash=1/04c3ebd87b3f7d212730d5f2d1157326-58836" alt="img"></p>
-<p><strong>如果是合并，输入git merge +目标分支，即把目标分支合并到当前分支上</strong></p>
-<p><strong>git merge 以后先git pull 拉取一下最新数据 ，最后git push，</strong></p>
-<p><strong>如git merge 的分支没有在本地上(如下图提示)，可以输入**</strong>git merge origin/被拉取的非本地分支名称,**</p>
-<p><strong><img src="https://app.yinxiang.com/FileSharing.action?hash=1/b393cc2dc8c673f42b1c933486876ef4-12927" alt="img"></strong></p>
-<ul>
-<li><p><strong>工作流</strong></p>
-<p> 1.创建分支 ：输入<strong>git branch 分支名称</strong></p>
 </li>
 </ul>
-<p>​    2.更改分支到当前分支上：输入<strong>gir checkout</strong> <strong>分支名称</strong> </p>
-<p>​    3.以上步骤可以合并到一个命令：输入<strong>git checkout -b</strong> <strong>分支名称</strong></p>
-<p>​    4.add →commit→ push 后，push提示需要在远程生成branch，输入 <strong>git push – set-upstream origin 分支名称</strong>，即可同时提交和创建远端新分支</p>
-<p><img src="https://app.yinxiang.com/FileSharing.action?hash=1/356425cb506d3f66c212543954c7c24a-30314" alt="img"></p>
-<ul>
-<li><strong>用ｉｄｅ解决冲突</strong></li>
+<p>一但这个配置类生效；这个配置类就会给容器中添加各种组件；这些组件的属性是从对应的properties类中获取的，这些类里面的每一个属性又是和配置文件绑定的；</p>
+<p>所有在配置文件中能配置的属性都是在xxxxProperties类中封装者‘；配置文件能配置什么就可以参照某个功能对应的这个属性类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ConfigurationProperties</span>(prefix = <span class="string">"spring.http.encoding"</span>)  <span class="comment">//从配置文件中获取指定的值和bean的属性进行绑定</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpEncodingProperties</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Charset DEFAULT_CHARSET = Charset.forName(<span class="string">"UTF-8"</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="简要概述："><a href="#简要概述：" class="headerlink" title="简要概述："></a>简要概述：</h4><p>​    ==<strong>1、SpringBoot启动会加载大量的自动配置类</strong>==</p>
+<p>​    ==<strong>2、我们看我们需要的功能有没有SpringBoot默认写好的自动配置类；</strong>==</p>
+<p>​    ==<strong>3、我们再来看这个自动配置类中到底配置了哪些组件；（只要我们要用的组件有，我们就不需要再来配置了）</strong>==</p>
+<p>​    ==<strong>4、给容器中自动配置类添加组件的时候，会从properties类中获取某些属性。我们就可以在配置文件中指定这些属性的值；</strong>==</p>
+<p>xxxxAutoConfigurartion：自动配置类；</p>
+<p>给容器中添加组件</p>
+<p>xxxxProperties:封装配置文件中相关属性；</p>
+<h4 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h4><p><strong>@Conditional派生注解（Spring注解原生的@Conditional作用）</strong></p>
+<p>作用：必须是@Conditional指定的条件成立，才给容器中添加组件，配置配里面的所有内容才生效；</p>
+<p><strong>自动配置类必须在一定的条件下才能生效；</strong></p>
+<p>我们怎么知道哪些自动配置类生效；</p>
+<p>我们可以通过启用  debug=true属性；来让控制台打印自动配置报告，这样我们就可以很方便的知道哪些自动配置类生效；</p>
+<h3 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h3><h4 id="1、日志框架"><a href="#1、日志框架" class="headerlink" title="1、日志框架"></a>1、日志框架</h4><p><strong>市面上的日志框架；</strong></p>
+<p>JUL、JCL、Jboss-logging、logback、log4j、log4j2、slf4j….</p>
+<table>
+<thead>
+<tr>
+<th>日志门面  （日志的抽象层）</th>
+<th>日志实现</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><del>JCL（Jakarta  Commons Logging）</del>    SLF4j（Simple  Logging Facade for Java）    <strong><del>jboss-logging</del></strong></td>
+<td>Log4j  JUL（java.util.logging）  Log4j2  <strong>Logback</strong></td>
+</tr>
+</tbody></table>
+<p>左边选一个门面（抽象层）、右边来选一个实现；</p>
+<p>日志门面：  SLF4J；</p>
+<p>日志实现：Logback；</p>
+<p>SpringBoot：底层是Spring框架，Spring框架默认是用JCL；‘</p>
+<p>​    <strong>==SpringBoot选用 SLF4j和logback；==</strong></p>
+<h4 id="2、-SLF4j使用"><a href="#2、-SLF4j使用" class="headerlink" title="2、 SLF4j使用"></a>2、 SLF4j使用</h4><p>图示；</p>
+<p>![images/concrete-bindings.png](C:/Users/TEMP.DESKTOP-OQFRHA8/Desktop/Spring Boot 笔记/images/concrete-bindings.png)</p>
+<p>每一个日志的实现框架都有自己的配置文件。使用slf4j以后，<strong>配置文件还是做成日志实现框架自己本身的配置文件；</strong></p>
+<h4 id="3、遗留问题"><a href="#3、遗留问题" class="headerlink" title="3、遗留问题"></a>3、遗留问题</h4><p>slf4j+logback）: Spring（commons-logging）、Hibernate（jboss-logging）、MyBatis、xxxx</p>
+<p>统一日志记录，即使是别的框架怎么和我一起统一使用slf4j进行输出</p>
+<p>![](C:/Users/TEMP.DESKTOP-OQFRHA8/Desktop/Spring Boot 笔记/images/legacy.png)</p>
+<p><strong>如何让系统中所有的日志都统一到slf4j；</strong></p>
+<p>==1、将系统中其他日志框架先排除出去；==</p>
+<p>==2、用中间包来替换原有的日志框架；==</p>
+<p>==3、我们导入slf4j其他的实现==</p>
+<p>SpringBoot使用它来做日志功能；</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>底层依赖关系</p>
+<p>![](C:/Users/TEMP.DESKTOP-OQFRHA8/Desktop/Spring Boot 笔记/images/搜狗截图20180131220946.png)</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>​    1、SpringBoot底层也是使用slf4j+logback的方式进行日志记录</p>
+<p>​    2、SpringBoot也把其他的日志都替换成了slf4j；</p>
+<p>​    3、中间替换包</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SuppressWarnings</span>(<span class="string">"rawtypes"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">LogFactory</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> String UNSUPPORTED_OPERATION_IN_JCL_OVER_SLF4J = <span class="string">"http://www.slf4j.org/codes.html#unsupported_operation_in_jcl_over_slf4j"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> LogFactory logFactory = <span class="keyword">new</span> SLF4JLogFactory();</span><br></pre></td></tr></table></figure>
+
+<p>![](C:/Users/TEMP.DESKTOP-OQFRHA8/Desktop/Spring Boot 笔记/images/搜狗截图20180131221411.png)</p>
+<p>​        4、如果我们要引入其他框架？一定要把这个框架的默认日志依赖移除掉？</p>
+<p>​            Spring框架用的是commons-logging；</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-logging<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>==SpringBoot能自动适配所有的日志，而且底层使用slf4j+logback的方式记录日志，引入其他框架的时候，只需要把这个框架依赖的日志框架排除掉即可；==</strong></p>
+<h4 id="4、日志的使用"><a href="#4、日志的使用" class="headerlink" title="4、日志的使用"></a>4、日志的使用</h4><ul>
+<li><p>默认配置</p>
+<p>SpringBoot默认帮我们配置好了日志；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">//记录器</span></span><br><span class="line">	Logger logger = LoggerFactory.getLogger(getClass());</span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">//System.out.println();</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//日志的级别；</span></span><br><span class="line">		<span class="comment">//由低到高   trace&lt;debug&lt;info&lt;warn&lt;error</span></span><br><span class="line">		<span class="comment">//可以调整输出的日志级别；日志就只会在这个级别以以后的高级别生效</span></span><br><span class="line">		logger.trace(<span class="string">"这是trace日志..."</span>);</span><br><span class="line">		logger.debug(<span class="string">"这是debug日志..."</span>);</span><br><span class="line">		<span class="comment">//SpringBoot默认给我们使用的是info级别的，没有指定级别的就用SpringBoot默认规定的级别；root级别</span></span><br><span class="line">		logger.info(<span class="string">"这是info日志..."</span>);</span><br><span class="line">		logger.warn(<span class="string">"这是warn日志..."</span>);</span><br><span class="line">		logger.error(<span class="string">"这是error日志..."</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"><span class="comment">/*日志输出格式：</span></span><br><span class="line"><span class="comment">		%d表示日期时间，</span></span><br><span class="line"><span class="comment">		%thread表示线程名，</span></span><br><span class="line"><span class="comment">		%-5level：级别从左显示5个字符宽度</span></span><br><span class="line"><span class="comment">		%logger&#123;50&#125; 表示logger名字最长50个字符，否则按照句点分割。 </span></span><br><span class="line"><span class="comment">		%msg：日志消息，</span></span><br><span class="line"><span class="comment">		%n是换行符</span></span><br><span class="line"><span class="comment">    --&gt;</span></span><br><span class="line"><span class="comment">    %d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; [%thread] %-5level %logger&#123;50&#125; - %msg%n</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+</li>
 </ul>
-<p><img src="https://app.yinxiang.com/FileSharing.action?hash=1/066bc341a4468e7edbf7daeb7242711f-1244210" alt="img"></p>
-<p>　<strong>ｉｄｅ的terminal　对比修改分支内容，并且保存，较传统方式更为直观</strong></p>
 <ul>
-<li><strong>其他操作</strong></li>
+<li><p>SpringBoot修改日志的默认配置</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">logging.level.com.atguigu</span>=<span class="string">trace</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#logging.path=</span></span><br><span class="line"><span class="comment"># 不指定路径在当前项目下生成springboot.log日志</span></span><br><span class="line"><span class="comment"># 可以指定完整的路径；</span></span><br><span class="line"><span class="comment">#logging.file=G:/springboot.log</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在当前磁盘的根路径下创建spring文件夹和里面的log文件夹；使用 spring.log 作为默认文件</span></span><br><span class="line"><span class="meta">logging.path</span>=<span class="string">/spring/log</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#  在控制台输出的日志的格式</span></span><br><span class="line"><span class="meta">logging.pattern.console</span>=<span class="string">%d&#123;yyyy-MM-dd&#125; [%thread] %-5level %logger&#123;50&#125; - %msg%n</span></span><br><span class="line"><span class="comment"># 指定文件中日志输出的格式</span></span><br><span class="line"><span class="meta">logging.pattern.file</span>=<span class="string">%d&#123;yyyy-MM-dd&#125; === [%thread] === %-5level === %logger&#123;50&#125; ==== %msg%n</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
 </ul>
-<p>​    1.日志查询：</p>
-<p>​      输入 <strong>$ git log</strong> </p>
-<p>​    2.可以看到某commit id做了什么：</p>
-<p>​      输入 <strong>$ git show + 日志中的commit id</strong></p>
-<p>​    3.重置commit 操作：</p>
-<p>​      输入 <strong>$ git reset + 日志中的commit id</strong></p>
-<p>​    4.查看本地和git仓库的状态：</p>
-<p>​      输入 <strong>$ git status</strong></p>
+<ul>
+<li><p>指定配置</p>
+<p>给类路径下放上每个日志框架自己的配置文件即可；SpringBoot就不使用他默认配置的了</p>
+<table>
+<thead>
+<tr>
+<th>Logging System</th>
+<th>Customization</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Logback</td>
+<td><code>logback-spring.xml</code>, <code>logback-spring.groovy</code>, <code>logback.xml</code> or <code>logback.groovy</code></td>
+</tr>
+<tr>
+<td>Log4j2</td>
+<td><code>log4j2-spring.xml</code> or <code>log4j2.xml</code></td>
+</tr>
+<tr>
+<td>JDK (Java Util Logging)</td>
+<td><code>logging.properties</code></td>
+</tr>
+</tbody></table>
+<p>logback.xml：直接就被日志框架识别了；</p>
+<p><strong>logback-spring.xml</strong>：日志框架就不直接加载日志的配置项，由SpringBoot解析日志配置，可以使用SpringBoot的高级Profile功能</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">springProfile</span> <span class="attr">name</span>=<span class="string">"staging"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- configuration to be enabled when the "staging" profile is active --&gt;</span></span><br><span class="line">  	可以指定某段配置只在某个环境下生效</span><br><span class="line"><span class="tag">&lt;/<span class="name">springProfile</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
 
       
 
@@ -329,7 +364,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Spring-Boot//" class="article-tag-list-link color2">Spring Boot</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -379,7 +436,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/04/Git/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/05/21/Spring-Boot%E5%AD%A6%E4%B9%A0%E4%BA%8C/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -393,18 +450,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/06/05/Spring-Boot%E5%AD%A6%E4%B9%A0%E5%9B%9B/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/05/22/Spring-Boot%E5%AD%A6%E4%B9%A0%E4%B8%89/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Spring-Boot学习四
+          Spring-Boot学习三
         
       </div>
     </a>
   
   
-    <a href="/2020/06/01/Mybatis%E6%B5%81%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Mybatis流程</div>
+    <a href="/2020/05/20/Spring-Boot%E5%AD%A6%E4%B9%A0%E4%B8%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Spring-Boot学习一</div>
       <i class="icon-circle-right"></i>
     </a>
   
