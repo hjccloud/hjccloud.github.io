@@ -16,7 +16,7 @@
 <meta property="og:description" content="Redis  redis是一款高性能的NOSQL系列的非关系型数据库  什么是NOSQL     NoSQL(NoSQL &#x3D; Not Only SQL)，意即“不仅仅是SQL”，是一项全新的数据库理念，泛指非关系型的数据库。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-08T11:58:20.715Z">
-<meta property="article:modified_time" content="2020-06-10T12:01:12.554Z">
+<meta property="article:modified_time" content="2020-06-10T12:05:39.933Z">
 <meta property="article:author" content="Pro He">
 <meta name="twitter:card" content="summary">
   
@@ -169,7 +169,7 @@
 <p> 什么是NOSQL<br>     NoSQL(NoSQL = Not Only SQL)，意即“不仅仅是SQL”，是一项全新的数据库理念，泛指非关系型的数据库。</p>
  <a id="more"></a>
 <pre><code>随着互联网web2.0网站的兴起，传统的关系数据库在应付web2.0网站，特别是超大规模和高并发的SNS类型的web2.0纯动态网站已经显得力不从心，暴露了很多难以克服的问题，而非关系型的数据库则由于其本身的特点得到了非常迅速的发展。NoSQL数据库的产生就是为了解决大规模数据集合多重数据种类带来的挑战，尤其是大数据应用难题</code></pre></blockquote>
-<pre><code>        1.1.1.    NOSQL和关系型数据库比较
+<h2 id="NOSQL和关系型数据库比较"><a href="#NOSQL和关系型数据库比较" class="headerlink" title="NOSQL和关系型数据库比较"></a>NOSQL和关系型数据库比较</h2><pre><code>        1.1.1.    NOSQL和关系型数据库比较
             优点：
                 1）成本：nosql数据库简单易部署，基本都是开源软件，不需要像使用oracle那样花费大量成本购买使用，相比关系型数据库价格便宜。
                 2）查询速度：nosql数据库将数据存储于缓存之中，关系型数据库将数据存储在硬盘中，自然查询速度远不及nosql数据库。
@@ -386,11 +386,8 @@
                //2. 操作
                jedis.set(&quot;username&quot;,&quot;zhangsan&quot;);
             //3. 关闭连接
-            jedis.close();</code></pre><p>​<br>​        * Jedis操作各种redis中的数据结构<br>​            1) 字符串类型 string<br>​                set<br>​                get<br>​<br>​                 //1. 获取连接<br>​                Jedis jedis = new Jedis();//如果使用空参构造，默认值 “localhost”,6379端口<br>​                //2. 操作<br>​                //存储<br>​                jedis.set(“username”,”zhangsan”);<br>​                //获取<br>​                String username = jedis.get(“username”);<br>​                System.out.println(username);<br>​<br>                //可以使用setex()方法存储可以指定过期时间的 key value<br>                jedis.setex(“activecode”,20,”hehe”);//将activecode：hehe键值对存入redis，并且20秒后自动删除该键值对</p>
-<pre><code>    //3. 关闭连接
-    jedis.close();
-
-2) 哈希类型 hash ： map格式  
+            jedis.close();</code></pre><p>​<br>​        * Jedis操作各种redis中的数据结构<br>​            1) 字符串类型 string<br>​                set<br>​                get<br>​<br>​                 //1. 获取连接<br>​                Jedis jedis = new Jedis();//如果使用空参构造，默认值 “localhost”,6379端口<br>​                //2. 操作<br>​                //存储<br>​                jedis.set(“username”,”zhangsan”);<br>​                //获取<br>​                String username = jedis.get(“username”);<br>​                System.out.println(username);<br>​<br>​                //可以使用setex()方法存储可以指定过期时间的 key value<br>​                jedis.setex(“activecode”,20,”hehe”);//将activecode：hehe键值对存入redis，并且20秒后自动删除该键值对<br>​<br>                //3. 关闭连接<br>                jedis.close();</p>
+<pre><code>2) 哈希类型 hash ： map格式  
     hset
     hget
     hgetAll
@@ -404,7 +401,7 @@
 
     // 获取hash
     String name = jedis.hget(&quot;user&quot;, &quot;name&quot;);
-    System.out.println(name);</code></pre><p>​<br>​                // 获取hash的所有map中的数据<br>​                Map&lt;String, String&gt; user = jedis.hgetAll(“user”);<br>​<br>​                // keyset<br>​                Set<String> keySet = user.keySet();<br>​                for (String key : keySet) {<br>​                    //获取value<br>​                    String value = user.get(key);<br>​                    System.out.println(key + “:” + value);<br>​                }<br>​<br>                //3. 关闭连接<br>                jedis.close();</p>
+    System.out.println(name);</code></pre><p>​<br>​                // 获取hash的所有map中的数据<br>​                Map&lt;String, String&gt; user = jedis.hgetAll(“user”);<br>​<br>​                // keyset<br>​                Set<String> keySet = user.keySet();<br>​                for (String key : keySet) {<br>​                    //获取value<br>​                    String value = user.get(key);<br>​                    System.out.println(key + “:” + value);<br>​                }<br>​<br>​                //3. 关闭连接<br>​                jedis.close();</p>
 <pre><code>3) 列表类型 list ： linkedlist格式。支持重复元素
     lpush / rpush
     lpop / rpop
@@ -442,39 +439,15 @@
 
     //1. 获取连接
     Jedis jedis = new Jedis();//如果使用空参构造，默认值 &quot;localhost&quot;,6379端口
-    //2. 操作</code></pre><p>​<br>​                // set 存储<br>​                jedis.sadd(“myset”,”java”,”php”,”c++”);<br>​<br>​                // set 获取<br>​                Set<String> myset = jedis.smembers(“myset”);<br>​                System.out.println(myset);<br>​<br>                //3. 关闭连接<br>                jedis.close();<br>            5) 有序集合类型 sortedset：不允许重复元素，且元素有顺序<br>                zadd<br>                zrange</p>
-<pre><code>//1. 获取连接
-Jedis jedis = new Jedis();//如果使用空参构造，默认值 &quot;localhost&quot;,6379端口
-//2. 操作
-// sortedset 存储
-jedis.zadd(&quot;mysortedset&quot;,3,&quot;亚瑟&quot;);
-jedis.zadd(&quot;mysortedset&quot;,30,&quot;后裔&quot;);
-jedis.zadd(&quot;mysortedset&quot;,55,&quot;孙悟空&quot;);
-
-// sortedset 获取
+    //2. 操作</code></pre><p>​<br>​                // set 存储<br>​                jedis.sadd(“myset”,”java”,”php”,”c++”);<br>​<br>​                // set 获取<br>​                Set<String> myset = jedis.smembers(“myset”);<br>​                System.out.println(myset);<br>​<br>​                //3. 关闭连接<br>​                jedis.close();<br>​            5) 有序集合类型 sortedset：不允许重复元素，且元素有顺序<br>​                zadd<br>​                zrange<br>​<br>                //1. 获取连接<br>                Jedis jedis = new Jedis();//如果使用空参构造，默认值 “localhost”,6379端口<br>                //2. 操作<br>                // sortedset 存储<br>                jedis.zadd(“mysortedset”,3,”亚瑟”);<br>                jedis.zadd(“mysortedset”,30,”后裔”);<br>                jedis.zadd(“mysortedset”,55,”孙悟空”);</p>
+<pre><code>// sortedset 获取
 Set&lt;String&gt; mysortedset = jedis.zrange(&quot;mysortedset&quot;, 0, -1);
 
 System.out.println(mysortedset);</code></pre><p>​<br>​                //3. 关闭连接<br>​                jedis.close();</p>
-<p>​<br>​        * jedis连接池： JedisPool<br>​            * 使用：<br>​                1. 创建JedisPool连接池对象<br>​                2. 调用方法 getResource()方法获取Jedis连接<br>​                    //0.创建一个配置对象<br>​                    JedisPoolConfig config = new JedisPoolConfig();<br>​                    config.setMaxTotal(50);<br>​                    config.setMaxIdle(10);<br>​<br>​                    //1.创建Jedis连接池对象<br>​                    JedisPool jedisPool = new JedisPool(config,”localhost”,6379);<br>​<br>                    //2.获取连接<br>                    Jedis jedis = jedisPool.getResource();<br>                    //3. 使用<br>                    jedis.set(“hehe”,”heihei”);</p>
-<p>​<br>​                    //4. 关闭 归还到连接池中<br>​                    jedis.close();<br>​<br>​            * 连接池工具类<br>​                public class JedisPoolUtils {<br>​<br>                    private static JedisPool jedisPool;</p>
-<pre><code>static{
-    //读取配置文件
-    InputStream is = JedisPoolUtils.class.getClassLoader().getResourceAsStream(&quot;jedis.properties&quot;);
-    //创建Properties对象
-    Properties pro = new Properties();
-    //关联文件
-    try {
-        pro.load(is);
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-    //获取数据，设置到JedisPoolConfig中
-    JedisPoolConfig config = new JedisPoolConfig();
-    config.setMaxTotal(Integer.parseInt(pro.getProperty(&quot;maxTotal&quot;)));
-    config.setMaxIdle(Integer.parseInt(pro.getProperty(&quot;maxIdle&quot;)));
-
-    //初始化JedisPool
-    jedisPool = new JedisPool(config,pro.getProperty(&quot;host&quot;),Integer.parseInt(pro.getProperty(&quot;port&quot;)));</code></pre><p>​<br>​<br>​                    }</p>
+<p>​<br>​        * jedis连接池： JedisPool<br>​            * 使用：<br>​                1. 创建JedisPool连接池对象<br>​                2. 调用方法 getResource()方法获取Jedis连接<br>​                    //0.创建一个配置对象<br>​                    JedisPoolConfig config = new JedisPoolConfig();<br>​                    config.setMaxTotal(50);<br>​                    config.setMaxIdle(10);<br>​<br>​                    //1.创建Jedis连接池对象<br>​                    JedisPool jedisPool = new JedisPool(config,”localhost”,6379);<br>​<br>​                    //2.获取连接<br>​                    Jedis jedis = jedisPool.getResource();<br>​                    //3. 使用<br>​                    jedis.set(“hehe”,”heihei”);</p>
+<p>​<br>​                    //4. 关闭 归还到连接池中<br>​                    jedis.close();<br>​<br>​            * 连接池工具类<br>​                public class JedisPoolUtils {<br>​<br>​                    private static JedisPool jedisPool;<br>​<br>                    static{<br>                        //读取配置文件<br>                        InputStream is = JedisPoolUtils.class.getClassLoader().getResourceAsStream(“jedis.properties”);<br>                        //创建Properties对象<br>                        Properties pro = new Properties();<br>                        //关联文件<br>                        try {<br>                            pro.load(is);<br>                        } catch (IOException e) {<br>                            e.printStackTrace();<br>                        }<br>                        //获取数据，设置到JedisPoolConfig中<br>                        JedisPoolConfig config = new JedisPoolConfig();<br>                        config.setMaxTotal(Integer.parseInt(pro.getProperty(“maxTotal”)));<br>                        config.setMaxIdle(Integer.parseInt(pro.getProperty(“maxIdle”)));</p>
+<pre><code>//初始化JedisPool
+jedisPool = new JedisPool(config,pro.getProperty(&quot;host&quot;),Integer.parseInt(pro.getProperty(&quot;port&quot;)));</code></pre><p>​<br>​<br>​                    }</p>
 <p>​<br>​                    /**<br>​                     * 获取连接方法<br>​                     */<br>​                    public static Jedis getJedis(){<br>​                        return jedisPool.getResource();<br>​                    }<br>​                }</p>
 <h2 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h2><pre><code>案例需求：
     1. 提供index.html页面，页面中有一个省份 下拉列表
