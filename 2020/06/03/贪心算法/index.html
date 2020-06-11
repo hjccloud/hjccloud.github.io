@@ -6,21 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>-分治算法 | inspire</title>
+  <title>贪心算法 | inspire</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据结构与算法-分治算法 分治算法介绍： 分治法是一种很重要的算法。字面上的解释是“分而治之”， 就是把一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分成更小的子问题……直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。 这个技巧是很多高效算法的基础，如排序算法(快速排序，归并排序)，傅立叶变换(快速傅立叶变换)……">
+  <meta name="description" content="贪心算法 贪心算法介绍：  贪婪算法(贪心算法)是指在对问题进行求解时，在每一步选择中都采取最好或者最优(即最有利)的选择，从而希望能够导致结果是最好或者最优的算法  贪婪算法所得到的结果不一定是最优的结果(有时候会是最优解)，但是都是相对近似(接近)最优解的结果">
 <meta property="og:type" content="article">
-<meta property="og:title" content="-分治算法">
-<meta property="og:url" content="http://yoursite.com/2020/06/02/%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="贪心算法">
+<meta property="og:url" content="http://yoursite.com/2020/06/03/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="inspire">
-<meta property="og:description" content="数据结构与算法-分治算法 分治算法介绍： 分治法是一种很重要的算法。字面上的解释是“分而治之”， 就是把一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分成更小的子问题……直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。 这个技巧是很多高效算法的基础，如排序算法(快速排序，归并排序)，傅立叶变换(快速傅立叶变换)……">
+<meta property="og:description" content="贪心算法 贪心算法介绍：  贪婪算法(贪心算法)是指在对问题进行求解时，在每一步选择中都采取最好或者最优(即最有利)的选择，从而希望能够导致结果是最好或者最优的算法  贪婪算法所得到的结果不一定是最优的结果(有时候会是最优解)，但是都是相对近似(接近)最优解的结果">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-06-02T06:58:33.000Z">
-<meta property="article:modified_time" content="2020-06-06T05:31:04.291Z">
+<meta property="og:image" content="d:%5Cnodejs%5Cblog%5Csource%5Cimages%5Cimage-20200611161229931.png">
+<meta property="og:image" content="d:%5Cnodejs%5Cblog%5Csource%5Cimages%5Cimage-20200611161347217.png">
+<meta property="article:published_time" content="2020-06-03T08:08:55.000Z">
+<meta property="article:modified_time" content="2020-06-11T08:40:30.851Z">
 <meta property="article:author" content="Pro He">
 <meta property="article:tag" content="数据结构与算法">
-<meta property="article:tag" content="分治">
+<meta property="article:tag" content="贪心">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:%5Cnodejs%5Cblog%5Csource%5Cimages%5Cimage-20200611161229931.png">
   
     <link rel="alternative" href="/atom.xml" title="inspire" type="application/atom+xml">
   
@@ -146,36 +149,73 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-分治算法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-贪心算法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      -分治算法
+      贪心算法
     </h1>
   
 
         
-        <a href="/2020/06/02/%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-06-02T06:58:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-02</time>
+        <a href="/2020/06/03/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-06-03T08:08:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="数据结构与算法-分治算法"><a href="#数据结构与算法-分治算法" class="headerlink" title="数据结构与算法-分治算法"></a>数据结构与算法-分治算法</h2><blockquote>
-<p>分治算法介绍：</p>
-<p>分治法是一种很重要的算法。字面上的解释是“分而治之”，</p>
-<p>就是把一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分成更小的子问题……直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。</p>
-<p>这个技巧是很多高效算法的基础，如排序算法(快速排序，归并排序)，傅立叶变换(快速傅立叶变换)……</p>
+        <h2 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h2><blockquote>
+<p>贪心算法介绍：</p>
+<ul>
+<li><p>贪婪算法(贪心算法)是指在对问题进行求解时，在每一步选择中都采取最好或者最优(即最有利)的选择，从而希望能够导致结果是最好或者最优的算法</p>
+</li>
+<li><p>贪婪算法所得到的结果不一定是最优的结果(有时候会是最优解)，但是都是相对近似(接近)最优解的结果</p>
+</li>
+</ul>
 </blockquote>
 <a id="more"></a>
 
-<h3 id="分治算法的基本步骤"><a href="#分治算法的基本步骤" class="headerlink" title="分治算法的基本步骤"></a>分治算法的基本步骤</h3><h4 id="1、分解：将原问题分解为若干个规模较小，相互独立，与原问题形式相同的子问题"><a href="#1、分解：将原问题分解为若干个规模较小，相互独立，与原问题形式相同的子问题" class="headerlink" title="1、分解：将原问题分解为若干个规模较小，相互独立，与原问题形式相同的子问题"></a>1、分解：将原问题分解为若干个规模较小，相互独立，与原问题形式相同的子问题</h4><h4 id="2、解决：若子问题规模较小而容易被解决则直接解，否则递归地解各个子问题"><a href="#2、解决：若子问题规模较小而容易被解决则直接解，否则递归地解各个子问题" class="headerlink" title="2、解决：若子问题规模较小而容易被解决则直接解，否则递归地解各个子问题"></a>2、解决：若子问题规模较小而容易被解决则直接解，否则递归地解各个子问题</h4><h4 id="3、合并：将各个子问题的解合并为原问题的解。"><a href="#3、合并：将各个子问题的解合并为原问题的解。" class="headerlink" title="3、合并：将各个子问题的解合并为原问题的解。"></a>3、合并：将各个子问题的解合并为原问题的解。</h4><h3 id="分治算法最佳实践-汉诺塔"><a href="#分治算法最佳实践-汉诺塔" class="headerlink" title="分治算法最佳实践-汉诺塔"></a>分治算法最佳实践-汉诺塔</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">char</span> start,<span class="keyword">char</span> mid,<span class="keyword">char</span> end)</span></span>&#123;</span><br><span class="line">        <span class="comment">//n=1</span></span><br><span class="line">        <span class="keyword">if</span>(n ==<span class="number">1</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">"第1个盘子从"</span>+start+<span class="string">"移到"</span>+end);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//n=2..把所有大于2的情况看做第二步</span></span><br><span class="line">        <span class="comment">//1.把上面所有盘子移到中间位置</span></span><br><span class="line">        <span class="keyword">else</span>&#123;print(n-<span class="number">1</span>,start,end,mid);</span><br><span class="line">        <span class="comment">//把最后一个盘子移到最右边位置</span></span><br><span class="line">        System.out.println(<span class="string">"第"</span>+n+<span class="string">"个盘子从"</span>+start+<span class="string">"移到"</span>+end);</span><br><span class="line">        <span class="comment">//吧中间所有盘子移到右边位置</span></span><br><span class="line">        print(n-<span class="number">1</span>,mid,start,end);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="贪心算法最佳应用-集合覆盖"><a href="#贪心算法最佳应用-集合覆盖" class="headerlink" title="贪心算法最佳应用-集合覆盖"></a>贪心算法最佳应用-集合覆盖</h2><p>假设存在如下表的需要付费的广播台，以及广播台信号可以覆盖的地区。 如何选择最少的广播台，让所有的地区都可以接收到信号</p>
+<p><img src="D:%5Cnodejs%5Cblog%5Csource%5Cimages%5Cimage-20200611161229931.png" alt="image-20200611161229931"></p>
+<ul>
+<li><p><strong>穷举法</strong></p>
+<p>列出每个可能的广播台的集合，这被称为幂集。假 设总的有 n 个广播台，则广播台的组合总共有<br>2ⁿ -1 个,假设每秒可以计算 10 个子集， 如图:</p>
+<p><img src="D:%5Cnodejs%5Cblog%5Csource%5Cimages%5Cimage-20200611161347217.png" alt="image-20200611161347217"></p>
+</li>
+</ul>
+<ul>
+<li><p><strong>贪心算法</strong></p>
+<ul>
+<li><strong>思路分析</strong></li>
+</ul>
+<ol>
+<li>使用贪婪算法，则可以得到非常接近的解，并且效率高。选择 策略上，因为需要覆盖全部地区的最小集合；</li>
+<li>遍历所有的广播电台, 找到一个覆盖了最多未覆盖的地区的电台(此电台可能包含一些已覆盖的地区，但没有关系） </li>
+<li>将这个电台加入到一个集合中(比如 ArrayList), 想办法把该电台覆盖的地区在下次比较时去掉。 </li>
+<li>重复第 1 步直到覆盖了全部的地区 </li>
+</ol>
+<ul>
+<li>代码实现</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//创建广播电台,放入到Map</span></span><br><span class="line">		HashMap&lt;String,HashSet&lt;String&gt;&gt; broadcasts = <span class="keyword">new</span> HashMap&lt;String, HashSet&lt;String&gt;&gt;();</span><br><span class="line">		<span class="comment">//将各个电台放入到broadcasts</span></span><br><span class="line">		HashSet&lt;String&gt; hashSet1 = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">		hashSet1.add(<span class="string">"北京"</span>);</span><br><span class="line">		hashSet1.add(<span class="string">"上海"</span>);</span><br><span class="line">		hashSet1.add(<span class="string">"天津"</span>);</span><br><span class="line">		</span><br><span class="line">		HashSet&lt;String&gt; hashSet2 = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">		hashSet2.add(<span class="string">"广州"</span>);</span><br><span class="line">		hashSet2.add(<span class="string">"北京"</span>);</span><br><span class="line">		hashSet2.add(<span class="string">"深圳"</span>);</span><br><span class="line">		</span><br><span class="line">		HashSet&lt;String&gt; hashSet3 = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">		hashSet3.add(<span class="string">"成都"</span>);</span><br><span class="line">		hashSet3.add(<span class="string">"上海"</span>);</span><br><span class="line">		hashSet3.add(<span class="string">"杭州"</span>);</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		HashSet&lt;String&gt; hashSet4 = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">		hashSet4.add(<span class="string">"上海"</span>);</span><br><span class="line">		hashSet4.add(<span class="string">"天津"</span>);</span><br><span class="line">		</span><br><span class="line">		HashSet&lt;String&gt; hashSet5 = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">		hashSet5.add(<span class="string">"杭州"</span>);</span><br><span class="line">		hashSet5.add(<span class="string">"大连"</span>);</span><br><span class="line">	</span><br><span class="line">		<span class="comment">//加入到map</span></span><br><span class="line">		broadcasts.put(<span class="string">"K1"</span>, hashSet1);</span><br><span class="line">		broadcasts.put(<span class="string">"K2"</span>, hashSet2);</span><br><span class="line">		broadcasts.put(<span class="string">"K3"</span>, hashSet3);</span><br><span class="line">		broadcasts.put(<span class="string">"K4"</span>, hashSet4);</span><br><span class="line">		broadcasts.put(<span class="string">"K5"</span>, hashSet5);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//allAreas 存放所有的地区</span></span><br><span class="line">		HashSet&lt;String&gt; allAreas = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">		allAreas.add(<span class="string">"北京"</span>);</span><br><span class="line">		allAreas.add(<span class="string">"上海"</span>);</span><br><span class="line">		allAreas.add(<span class="string">"天津"</span>);</span><br><span class="line">		allAreas.add(<span class="string">"广州"</span>);</span><br><span class="line">		allAreas.add(<span class="string">"深圳"</span>);</span><br><span class="line">		allAreas.add(<span class="string">"成都"</span>);</span><br><span class="line">		allAreas.add(<span class="string">"杭州"</span>);</span><br><span class="line">		allAreas.add(<span class="string">"大连"</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//创建ArrayList, 存放选择的电台集合</span></span><br><span class="line">		ArrayList&lt;String&gt; selects = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//定义一个临时的集合， 在遍历的过程中，存放遍历过程中的电台覆盖的地区和当前还没有覆盖的地区的交集</span></span><br><span class="line">		HashSet&lt;String&gt; tempSet = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//定义给maxKey ， 保存在一次遍历过程中，能够覆盖最大未覆盖的地区对应的电台的key</span></span><br><span class="line">		<span class="comment">//如果maxKey 不为null , 则会加入到 selects</span></span><br><span class="line">		String maxKey = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">while</span>(allAreas.size() != <span class="number">0</span>) &#123; <span class="comment">// 如果allAreas 不为0, 则表示还没有覆盖到所有的地区</span></span><br><span class="line">			<span class="comment">//每进行一次while,需要</span></span><br><span class="line">			maxKey = <span class="keyword">null</span>;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">//遍历 broadcasts, 取出对应key</span></span><br><span class="line">			<span class="keyword">for</span>(String key : broadcasts.keySet()) &#123;</span><br><span class="line">				<span class="comment">//每进行一次for</span></span><br><span class="line">				tempSet.clear();</span><br><span class="line">				<span class="comment">//当前这个key能够覆盖的地区</span></span><br><span class="line">				HashSet&lt;String&gt; areas = broadcasts.get(key);</span><br><span class="line">				tempSet.addAll(areas);</span><br><span class="line">				<span class="comment">//求出tempSet 和   allAreas 集合的交集, 交集会赋给 tempSet</span></span><br><span class="line">				tempSet.retainAll(allAreas);</span><br><span class="line">				<span class="comment">//如果当前这个集合包含的未覆盖地区的数量，比maxKey指向的集合地区还多</span></span><br><span class="line">				<span class="comment">//就需要重置maxKey</span></span><br><span class="line">				<span class="comment">// tempSet.size() &gt;broadcasts.get(maxKey).size()) 体现出贪心算法的特点,每次都选择最优的</span></span><br><span class="line">				<span class="keyword">if</span>(tempSet.size() &gt; <span class="number">0</span> &amp;&amp; </span><br><span class="line">						(maxKey == <span class="keyword">null</span> || tempSet.size() &gt;broadcasts.get(maxKey).size()))&#123;</span><br><span class="line">					maxKey = key;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//maxKey != null, 就应该将maxKey 加入selects</span></span><br><span class="line">			<span class="keyword">if</span>(maxKey != <span class="keyword">null</span>) &#123;</span><br><span class="line">				selects.add(maxKey);</span><br><span class="line">				<span class="comment">//将maxKey指向的广播电台覆盖的地区，从 allAreas 去掉</span></span><br><span class="line">				allAreas.removeAll(broadcasts.get(maxKey));</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">"得到的选择结果是"</span> + selects);<span class="comment">//[K1,K2,K3,K5]</span></span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
+
+
+</li>
+</ul>
+<ul>
+<li>贪心算法注意事项和细节<ul>
+<li>贪婪算法所得到的结果不一定是最优的结果(有时候会是最优解)，但是都是相对近似(接近)最优解的结果 </li>
+<li>比如上题的算法选出的是 K1,K2,K3,K5，符合覆盖了全部的地区 </li>
+<li>但是我们发现 K2,K3,K4,K5 也可以覆盖全部地区，如果 K2 的使用成本低于 K1,那么我们上题的 K1,K2,K3, K5 虽然是满足条件，但是并不是最优的</li>
+</ul>
+</li>
+</ul>
 
       
 
@@ -214,7 +254,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">分治</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">贪心</a>
         		</li>
       		
 		</ul>
@@ -281,7 +321,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/02/%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/03/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -295,18 +335,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/06/02/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/06/04/Spring-Boot%E5%AD%A6%E4%B9%A0%E4%B8%89/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          动态规划算法
+          Spring-Boot学习三
         
       </div>
     </a>
   
   
-    <a href="/2020/06/01/%E9%80%92%E5%BD%92/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">递归</div>
+    <a href="/2020/06/03/Spring-Boot%E5%AD%A6%E4%B9%A0%E4%BA%8C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Spring-Boot学习二</div>
       <i class="icon-circle-right"></i>
     </a>
   
