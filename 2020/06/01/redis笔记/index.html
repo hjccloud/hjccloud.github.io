@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>redis笔记 | inspire</title>
+  <title>Mybatis框架基本工作流程 | inspire</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Redis  redis是一款高性能的NOSQL系列的非关系型数据库  什么是NOSQL     NoSQL(NoSQL &#x3D; Not Only SQL)，意即“不仅仅是SQL”，是一项全新的数据库理念，泛指非关系型的数据库。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="redis笔记">
-<meta property="og:url" content="http://yoursite.com/2020/06/08/redis%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="Mybatis框架基本工作流程">
+<meta property="og:url" content="http://yoursite.com/2020/06/01/redis%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="inspire">
 <meta property="og:description" content="Redis  redis是一款高性能的NOSQL系列的非关系型数据库  什么是NOSQL     NoSQL(NoSQL &#x3D; Not Only SQL)，意即“不仅仅是SQL”，是一项全新的数据库理念，泛指非关系型的数据库。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-06-08T11:58:20.715Z">
-<meta property="article:modified_time" content="2020-06-10T12:10:01.941Z">
+<meta property="article:published_time" content="2020-06-01T06:13:34.000Z">
+<meta property="article:modified_time" content="2020-06-14T10:23:23.874Z">
 <meta property="article:author" content="Pro He">
+<meta property="article:tag" content="Mybaties">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="inspire" type="application/atom+xml">
@@ -151,13 +152,13 @@
         
   
     <h1 class="article-title" itemprop="name">
-      redis笔记
+      Mybatis框架基本工作流程
     </h1>
   
 
         
-        <a href="/2020/06/08/redis%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-06-08T11:58:20.715Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
+        <a href="/2020/06/01/redis%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-06-01T06:13:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-01</time>
 </a>
         
       </header>
@@ -385,7 +386,7 @@
                //2. 操作
                jedis.set(&quot;username&quot;,&quot;zhangsan&quot;);
             //3. 关闭连接
-            jedis.close();</code></pre><p>​<br>​        * Jedis操作各种redis中的数据结构<br>​            1) 字符串类型 string<br>​                set<br>​                get<br>​<br>​                 //1. 获取连接<br>​                Jedis jedis = new Jedis();//如果使用空参构造，默认值 “localhost”,6379端口<br>​                //2. 操作<br>​                //存储<br>​                jedis.set(“username”,”zhangsan”);<br>​                //获取<br>​                String username = jedis.get(“username”);<br>​                System.out.println(username);<br>​<br>​                //可以使用setex()方法存储可以指定过期时间的 key value<br>​                jedis.setex(“activecode”,20,”hehe”);//将activecode：hehe键值对存入redis，并且20秒后自动删除该键值对<br>​<br>​                //3. 关闭连接<br>​                jedis.close();<br>​<br>​            2) 哈希类型 hash ： map格式<br>​                hset<br>​                hget<br>​                hgetAll<br>​                //1. 获取连接<br>​                Jedis jedis = new Jedis();//如果使用空参构造，默认值 “localhost”,6379端口<br>​                //2. 操作<br>​                // 存储hash<br>​                jedis.hset(“user”,”name”,”lisi”);<br>​                jedis.hset(“user”,”age”,”23”);<br>​                jedis.hset(“user”,”gender”,”female”);<br>​<br>                // 获取hash<br>                String name = jedis.hget(“user”, “name”);<br>                System.out.println(name);</p>
+            jedis.close();</code></pre><p>​<br>​        * Jedis操作各种redis中的数据结构<br>​            1) 字符串类型 string<br>​                set<br>​                get<br>​<br>​                 //1. 获取连接<br>​                Jedis jedis = new Jedis();//如果使用空参构造，默认值 “localhost”,6379端口<br>​                //2. 操作<br>​                //存储<br>​                jedis.set(“username”,”zhangsan”);<br>​                //获取<br>​                String username = jedis.get(“username”);<br>​                System.out.println(username);<br>​<br>​                //可以使用setex()方法存储可以指定过期时间的 key value<br>​                jedis.setex(“activecode”,20,”hehe”);//将activecode：hehe键值对存入redis，并且20秒后自动删除该键值对<br>​<br>​                //3. 关闭连接<br>​                jedis.close();<br>​<br>​            2) 哈希类型 hash ： map格式<br>​                hset<br>​                hget<br>​                hgetAll<br>​                //1. 获取连接<br>​                Jedis jedis = new Jedis();//如果使用空参构造，默认值 “localhost”,6379端口<br>​                //2. 操作<br>​                // 存储hash<br>​                jedis.hset(“user”,”name”,”lisi”);<br>​                jedis.hset(“user”,”age”,”23”);<br>​                jedis.hset(“user”,”gender”,”female”);<br>​<br>​                // 获取hash<br>​                String name = jedis.hget(“user”, “name”);<br>​                System.out.println(name);</p>
 <p>​<br>​                // 获取hash的所有map中的数据<br>​                Map&lt;String, String&gt; user = jedis.hgetAll(“user”);<br>​<br>​                // keyset<br>​                Set<String> keySet = user.keySet();<br>​                for (String key : keySet) {<br>​                    //获取value<br>​                    String value = user.get(key);<br>​                    System.out.println(key + “:” + value);<br>​                }<br>​<br>​                //3. 关闭连接<br>​                jedis.close();</p>
 <pre><code>3) 列表类型 list ： linkedlist格式。支持重复元素
     lpush / rpush
@@ -424,7 +425,7 @@
 
     //1. 获取连接
     Jedis jedis = new Jedis();//如果使用空参构造，默认值 &quot;localhost&quot;,6379端口
-    //2. 操作</code></pre><p>​<br>​                // set 存储<br>​                jedis.sadd(“myset”,”java”,”php”,”c++”);<br>​<br>​                // set 获取<br>​                Set<String> myset = jedis.smembers(“myset”);<br>​                System.out.println(myset);<br>​<br>​                //3. 关闭连接<br>​                jedis.close();<br>​            5) 有序集合类型 sortedset：不允许重复元素，且元素有顺序<br>​                zadd<br>​                zrange<br>​<br>​                //1. 获取连接<br>​                Jedis jedis = new Jedis();//如果使用空参构造，默认值 “localhost”,6379端口<br>​                //2. 操作<br>​                // sortedset 存储<br>​                jedis.zadd(“mysortedset”,3,”亚瑟”);<br>​                jedis.zadd(“mysortedset”,30,”后裔”);<br>​                jedis.zadd(“mysortedset”,55,”孙悟空”);<br>​<br>​                // sortedset 获取<br>​                Set<String> mysortedset = jedis.zrange(“mysortedset”, 0, -1);<br>​<br>                System.out.println(mysortedset);</p>
+    //2. 操作</code></pre><p>​<br>​                // set 存储<br>​                jedis.sadd(“myset”,”java”,”php”,”c++”);<br>​<br>​                // set 获取<br>​                Set<String> myset = jedis.smembers(“myset”);<br>​                System.out.println(myset);<br>​<br>​                //3. 关闭连接<br>​                jedis.close();<br>​            5) 有序集合类型 sortedset：不允许重复元素，且元素有顺序<br>​                zadd<br>​                zrange<br>​<br>​                //1. 获取连接<br>​                Jedis jedis = new Jedis();//如果使用空参构造，默认值 “localhost”,6379端口<br>​                //2. 操作<br>​                // sortedset 存储<br>​                jedis.zadd(“mysortedset”,3,”亚瑟”);<br>​                jedis.zadd(“mysortedset”,30,”后裔”);<br>​                jedis.zadd(“mysortedset”,55,”孙悟空”);<br>​<br>​                // sortedset 获取<br>​                Set<String> mysortedset = jedis.zrange(“mysortedset”, 0, -1);<br>​<br>​                System.out.println(mysortedset);</p>
 <p>​<br>​                //3. 关闭连接<br>​                jedis.close();</p>
 <p>​<br>​        * jedis连接池： JedisPool<br>​            * 使用：<br>​                1. 创建JedisPool连接池对象<br>​                2. 调用方法 getResource()方法获取Jedis连接<br>​                    //0.创建一个配置对象<br>​                    JedisPoolConfig config = new JedisPoolConfig();<br>​                    config.setMaxTotal(50);<br>​                    config.setMaxIdle(10);<br>​<br>​                    //1.创建Jedis连接池对象<br>​                    JedisPool jedisPool = new JedisPool(config,”localhost”,6379);<br>​<br>​                    //2.获取连接<br>​                    Jedis jedis = jedisPool.getResource();<br>​                    //3. 使用<br>​                    jedis.set(“hehe”,”heihei”);</p>
 <p>​<br>​                    //4. 关闭 归还到连接池中<br>​                    jedis.close();<br>​<br>​            * 连接池工具类<br>​                public class JedisPoolUtils {<br>​<br>​                    private static JedisPool jedisPool;<br>​<br>​                    static{<br>​                        //读取配置文件<br>​                        InputStream is = JedisPoolUtils.class.getClassLoader().getResourceAsStream(“jedis.properties”);<br>​                        //创建Properties对象<br>​                        Properties pro = new Properties();<br>​                        //关联文件<br>​                        try {<br>​                            pro.load(is);<br>​                        } catch (IOException e) {<br>​                            e.printStackTrace();<br>​                        }<br>​                        //获取数据，设置到JedisPoolConfig中<br>​                        JedisPoolConfig config = new JedisPoolConfig();<br>​                        config.setMaxTotal(Integer.parseInt(pro.getProperty(“maxTotal”)));<br>​                        config.setMaxIdle(Integer.parseInt(pro.getProperty(“maxIdle”)));<br>​<br>​                        //初始化JedisPool<br>​                        jedisPool = new JedisPool(config,pro.getProperty(“host”),Integer.parseInt(pro.getProperty(“port”)));</p>
@@ -482,7 +483,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Mybaties</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Mybaties//" class="article-tag-list-link color4">Mybaties</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -532,7 +555,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/08/redis%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/01/redis%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -546,18 +569,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/06/08/MySQL%E5%A4%9A%E8%A1%A8&%E4%BA%8B%E5%8A%A1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/06/01/Spring-Boot%E5%AD%A6%E4%B9%A0%E4%B8%80/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          MySQL多表&amp;事务
+          Spring-Boot学习一
         
       </div>
     </a>
   
   
-    <a href="/2020/06/05/Spring-Boot%E5%AD%A6%E4%B9%A0%E5%9B%9B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Spring-Boot学习四</div>
+    <a href="/2020/05/31/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
       <i class="icon-circle-right"></i>
     </a>
   
