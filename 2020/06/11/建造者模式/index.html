@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | inspire</title>
+  <title>建造者模式 | inspire</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="inspire">
-<meta property="og:url" content="http://yoursite.com/archives/page/3/index.html">
+  <meta name="description" content="原型设计模式1、建造者模式基本介绍 建造者模式（BuilderPattern） 又叫生成器模式，是一种对象构建模式。它可以将复杂对象的建造过程抽象出来（抽象类别），使这个抽象过程的不同实现方法可以构造出不同表现（属性）的对象  建造者模式 是一步一步创建一个复杂的对象，它允许用户只通过指定复杂对象的类型和内容就可以构建它们，用户不需要知道内部的具体构建细节">
+<meta property="og:type" content="article">
+<meta property="og:title" content="建造者模式">
+<meta property="og:url" content="http://yoursite.com/2020/06/11/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="inspire">
+<meta property="og:description" content="原型设计模式1、建造者模式基本介绍 建造者模式（BuilderPattern） 又叫生成器模式，是一种对象构建模式。它可以将复杂对象的建造过程抽象出来（抽象类别），使这个抽象过程的不同实现方法可以构造出不同表现（属性）的对象  建造者模式 是一步一步创建一个复杂的对象，它允许用户只通过指定复杂对象的类型和内容就可以构建它们，用户不需要知道内部的具体构建细节">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/06/11/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/%5Cimages%5Cimage-20200622182540355.png">
+<meta property="article:published_time" content="2020-06-11T07:50:39.000Z">
+<meta property="article:modified_time" content="2020-06-22T10:31:16.315Z">
 <meta property="article:author" content="Pro He">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/06/11/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/%5Cimages%5Cimage-20200622182540355.png">
   
     <link rel="alternative" href="/atom.xml" title="inspire" type="application/atom+xml">
   
@@ -134,127 +140,201 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-建造者模式" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/30/KMP%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-05-30T08:15:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/30/KMP%E7%AE%97%E6%B3%95/">KMP算法</a>
+    <h1 class="article-title" itemprop="name">
+      建造者模式
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">KMP算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        <a href="/2020/06/11/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+  	<time datetime="2020-06-11T07:50:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="原型设计模式"><a href="#原型设计模式" class="headerlink" title="原型设计模式"></a>原型设计模式</h2><h3 id="1、建造者模式基本介绍"><a href="#1、建造者模式基本介绍" class="headerlink" title="1、建造者模式基本介绍"></a>1、建造者模式基本介绍</h3><ul>
+<li><p>建造者模式（BuilderPattern） 又叫生成器模式，是一种对象构建模式。它可以将复杂对象的建造过程抽象出来（抽象类别），使这个抽象过程的不同实现方法可以构造出不同表现（属性）的对象</p>
+</li>
+<li><p>建造者模式 是一步一步创建一个复杂的对象，它允许用户只通过指定复杂对象的类型和内容就可以构建它们，用户不需要知道内部的具体构建细节</p>
+</li>
+<li><a id="more"></a>
 
-          
+
+
+</li>
+</ul>
+<h3 id="2、建造者模式的四个角色"><a href="#2、建造者模式的四个角色" class="headerlink" title="2、建造者模式的四个角色"></a>2、建造者模式的四个角色</h3><p>1、Product（产品角色）：一个具体的产品对象</p>
+<p>2、Builder（抽象建造者）：创建一个Product对象的各个部件指定的接口/抽象类</p>
+<p>3、ConcreteBuilder（具体建造者）：实现Builder接口，具体构建和装配各个部件</p>
+<p>4、Director（指挥者）：构建一个使用Builder接口的对象，它主要是用于创建一个复杂的对象。他这主要有两个作用：一是：隔离了客户与对象的生产过程。二是：负责控制产品对象的生产过程</p>
+<h3 id="3、建造者模式原理类图"><a href="#3、建造者模式原理类图" class="headerlink" title="3、建造者模式原理类图"></a>3、建造者模式原理类图</h3><p><img src="%5Cimages%5Cimage-20200622182540355.png" alt="image-20200622182540355"></p>
+<h3 id="4、建造者模式的注意事项和细节"><a href="#4、建造者模式的注意事项和细节" class="headerlink" title="4、建造者模式的注意事项和细节"></a>4、建造者模式的注意事项和细节</h3><ul>
+<li><p>客户端(使用程序)不必知道产品内部组成的细节，将产品本身与产品的创建过程解耦，使得相同的创建过程可以创建不同的产品对象 </p>
+</li>
+<li><p>每一个具体建造者都相对独立，而与其他的具体建造者无关，因此可以很方便地替换具体建造者或增加新的具体建造者， 用户使用不同的具体建造者即可得到不同的产品对象</p>
+</li>
+<li><p>可以更加精细地控制产品的创建过程 。将复杂产品的创建步骤分解在不同的方法中，使得创建过程更加清晰，也更方便使用程序来控制创建过程 </p>
+</li>
+<li><p>增加新的具体建造者无须修改原有类库的代码，指挥者类针对抽象建造者类编程，系统扩展方便，符合“<strong>开闭原则</strong>” </p>
+</li>
+<li><p>建造者模式所创建的产品一般具有较多的共同点，其<strong>组成部分相似</strong>，如果产品之间的差异性很大，则不适合使用建造者模式，因此其使用范围受到一定的限制</p>
+</li>
+<li><p>如果产品的内部变化复杂，可能会<strong>导致需要定义很多具体建造者类</strong>来实现这种变化，导致系统变得很庞大，因 此在这种情况下，要考虑是否选择建造者模式</p>
+</li>
+<li><p>抽象工厂模式 VS 建造者模式</p>
+<ul>
+<li>抽象工厂模式：一个产品家族是这样的一系列产品，具有不同分类维度的产品组合，采用抽象工厂模式不需要关心构建过程，只关心什么产品由什么工厂生产即可</li>
+<li>建造者模式：要求按照指定的蓝图建造产品，它的主要目的是通过组装零配件而产生一个新产品</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构与算法//" class="article-tag-list-link color3">数据结构与算法</a>
+        			<a href="/categories/设计模式//" class="article-tag-list-link color5">设计模式</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/11/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84/" class="archive-article-date">
-  	<time datetime="2020-05-26T02:13:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-26</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/09/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">原型设计模式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84/">稀疏数组</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">稀疏数组</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构与算法//" class="article-tag-list-link color3">数据结构与算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
+  
+
+  
+
   
 
 
@@ -282,8 +362,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
