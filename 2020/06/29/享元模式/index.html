@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | inspire</title>
+  <title>享元模式 | inspire</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="inspire">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="享元模式 享元模式（FlyweightPattern） 也叫 蝇量模式: 运用共享技术有效地支持大量细粒度的对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="享元模式">
+<meta property="og:url" content="http://yoursite.com/2020/06/29/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="inspire">
+<meta property="og:description" content="享元模式 享元模式（FlyweightPattern） 也叫 蝇量模式: 运用共享技术有效地支持大量细粒度的对象">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/06/29/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/%5Cimages%5Cimage-20200629115701302.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/29/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/%5Cimages%5Cimage-20200629121201031.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/29/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/%5Cimages%5Cimage-20200629122000767.png">
+<meta property="article:published_time" content="2020-06-29T04:26:39.000Z">
+<meta property="article:modified_time" content="2020-06-29T04:26:20.658Z">
 <meta property="article:author" content="Pro He">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/06/29/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/%5Cimages%5Cimage-20200629115701302.png">
   
     <link rel="alternative" href="/atom.xml" title="inspire" type="application/atom+xml">
   
@@ -134,37 +142,116 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-享元模式" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      享元模式
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/29/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
+
+        
+        <a href="/2020/06/29/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
   	<time datetime="2020-06-29T04:26:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-29</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/29/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/">享元模式</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="享元模式"><a href="#享元模式" class="headerlink" title="享元模式"></a>享元模式</h2><blockquote>
+<p>享元模式（FlyweightPattern） 也叫 蝇量模式: 运用<strong>共享技术</strong>有效地支持大量细粒度的对象 </p>
+</blockquote>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
-          
+<blockquote>
+<ul>
+<li><p>常用于系统底层开发，解决系统的性能问题，象数据库连接池，里面都是创建好的连接对相关，在这些连接对象中有我们需要的则直接拿来用，避免重新创建，如果没有我们需要的，则创建一个</p>
+</li>
+<li><p>享元模式能够解决重复对象的内存浪费的问题，当系统中有大量相似对象，需要缓冲池时，不需总是创建新对象，可以从缓冲池里拿，这样可以降低系统内存，同时提高效率</p>
+</li>
+<li><p>享元模式经典的应用场景就是池技术了，String常量池，数据库连接池，缓冲池等等都是享元模式的应用，享元模式是池技术重要的实现方式</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="享元模式原理类图"><a href="#享元模式原理类图" class="headerlink" title="享元模式原理类图"></a>享元模式原理类图</h3><p><img src="%5Cimages%5Cimage-20200629115701302.png" alt="image-20200629115701302"></p>
+<ul>
+<li>FlyWeight 是抽象的享元角色, 他是产品的抽象类, 同时定义出对象的外部状态和内部状态(后面介绍) 的接口<br>或实现 </li>
+<li><strong>ConcreteFlyWeight 是具体的享元角色</strong>，是具体的产品类，实现抽象角色定义相关业务 </li>
+<li><strong>UnSharedConcreteFlyWeight</strong> <strong>是不可共享的角色</strong>，一般不会出现在享元工厂。</li>
+<li><strong>FlyWeightFactory 享元工厂类</strong>，用于构建一个池容器(集合)， 同时提供从池中获取对象方法</li>
+</ul>
+<h3 id="内部状态和外部状态"><a href="#内部状态和外部状态" class="headerlink" title="内部状态和外部状态"></a>内部状态和外部状态</h3><p>比如围棋、五子棋、跳棋，它们都有大量的棋子对象，围棋和五子棋只有黑白两色，跳棋颜色多一点，所以棋子颜色就是棋子的内部状态；而各个棋子之间的差别就是位置的不同，当我们落子后，落子颜色是定的，但位置是变化的，所以棋子坐标就是棋子的外部状态</p>
+<ul>
+<li>享元模式提出了两个要求，细粒度和共享对象，这里涉及到内部状态和外部状态，即将对象的信息分为两个部分：内部状态和外部状态</li>
+<li><strong>内部状态</strong>指对象共享出来的信息，存储在享元对象内部且不会随环境的改变而改变</li>
+<li><strong>外部状态</strong>指对象得以依赖的一个标记，是随环境的改变而改变的、不可共享的状态</li>
+</ul>
+<h3 id="享元模式解决网站展示项目"><a href="#享元模式解决网站展示项目" class="headerlink" title="享元模式解决网站展示项目"></a>享元模式解决网站展示项目</h3><p><img src="%5Cimages%5Cimage-20200629121201031.png" alt="image-20200629121201031"></p>
+<p>代码实现：</p>
+<p>抽象的享元对象：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">WebSite</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">use</span><span class="params">(User user)</span></span>;<span class="comment">//抽象方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>具体的享元对象（内部状态）：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//具体网站</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteWebSite</span> <span class="keyword">extends</span> <span class="title">WebSite</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//共享的部分，内部状态</span></span><br><span class="line">	<span class="keyword">private</span> String type = <span class="string">""</span>; <span class="comment">//网站发布的形式(类型)</span></span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//构造器</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ConcreteWebSite</span><span class="params">(String type)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">this</span>.type = type;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">use</span><span class="params">(User user)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		System.out.println(<span class="string">"网站的发布形式为:"</span> + type + <span class="string">" 在使用中 .. 使用者是"</span> + user.getName());</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>工厂存储所有享元对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 网站工厂类，根据需要返回压一个网站</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebSiteFactory</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//集合， 充当池的作用</span></span><br><span class="line">	<span class="keyword">private</span> HashMap&lt;String, ConcreteWebSite&gt; pool = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//根据网站的类型，返回一个网站, 如果没有就创建一个网站，并放入到池中,并返回</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> WebSite <span class="title">getWebSiteCategory</span><span class="params">(String type)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(!pool.containsKey(type)) &#123;</span><br><span class="line">			<span class="comment">//就创建一个网站，并放入到池中</span></span><br><span class="line">			pool.put(type, <span class="keyword">new</span> ConcreteWebSite(type));</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span> (WebSite)pool.get(type);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//获取网站分类的总数 (池中有多少个网站类型)</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getWebSiteCount</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> pool.size();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>客户端：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">// 创建一个工厂类</span></span><br><span class="line">		WebSiteFactory factory = <span class="keyword">new</span> WebSiteFactory();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 客户要一个以新闻形式发布的网站</span></span><br><span class="line">		WebSite webSite1 = factory.getWebSiteCategory(<span class="string">"新闻"</span>);</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">		webSite1.use(<span class="keyword">new</span> User(<span class="string">"tom"</span>));</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 客户要一个以博客形式发布的网站</span></span><br><span class="line">		WebSite webSite2 = factory.getWebSiteCategory(<span class="string">"博客"</span>);</span><br><span class="line"></span><br><span class="line">		webSite2.use(<span class="keyword">new</span> User(<span class="string">"jack"</span>));</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 客户要一个以博客形式发布的网站</span></span><br><span class="line">		WebSite webSite3 = factory.getWebSiteCategory(<span class="string">"博客"</span>);</span><br><span class="line"></span><br><span class="line">		webSite3.use(<span class="keyword">new</span> User(<span class="string">"smith"</span>));</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 客户要一个以博客形式发布的网站</span></span><br><span class="line">		WebSite webSite4 = factory.getWebSiteCategory(<span class="string">"博客"</span>);</span><br><span class="line"></span><br><span class="line">		webSite4.use(<span class="keyword">new</span> User(<span class="string">"king"</span>));</span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">"网站的分类共="</span> + factory.getWebSiteCount());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="享元模式在-JDK-Interger-的应用源码分析"><a href="#享元模式在-JDK-Interger-的应用源码分析" class="headerlink" title="享元模式在 JDK-Interger 的应用源码分析"></a>享元模式在 JDK-Interger 的应用源码分析</h3><p><img src="%5Cimages%5Cimage-20200629122000767.png" alt="image-20200629122000767"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//如果 Integer.valueOf(x) x 在  -128 --- 127 直接，就是使用享元模式返回,如果不在</span></span><br><span class="line">		<span class="comment">//范围类，则仍然 new </span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//小结:</span></span><br><span class="line">		<span class="comment">//1. 在valueOf 方法中，先判断值是否在 IntegerCache 中，如果不在，就创建新的Integer(new), 否则，就直接从 缓存池返回</span></span><br><span class="line">		<span class="comment">//2. valueOf 方法，就使用到享元模式</span></span><br><span class="line">		<span class="comment">//3. 如果使用valueOf 方法得到一个Integer 实例，范围在 -128 - 127 ，执行速度比 new 快</span></span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		Integer x = Integer.valueOf(<span class="number">127</span>);  </span><br><span class="line">		Integer y = <span class="keyword">new</span> Integer(<span class="number">127</span>); </span><br><span class="line">		Integer z = Integer.valueOf(<span class="number">127</span>);</span><br><span class="line">		Integer w = <span class="keyword">new</span> Integer(<span class="number">127</span>);</span><br><span class="line">	</span><br><span class="line">		System.out.println(x.equals(y)); <span class="comment">// 大小，true</span></span><br><span class="line">		System.out.println(x == y ); <span class="comment">//  false</span></span><br><span class="line">		System.out.println(x == z ); <span class="comment">// true</span></span><br><span class="line">		System.out.println(w == x ); <span class="comment">// false</span></span><br><span class="line">		System.out.println(w == y ); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="享元模式的注意事项和细节"><a href="#享元模式的注意事项和细节" class="headerlink" title="享元模式的注意事项和细节"></a>享元模式的注意事项和细节</h3><ul>
+<li>在享元模式这样理解：“享”就表示共享，“元”表示对象</li>
+<li>系统中有大量对象，这些对象消耗大量内存，并且<strong>对象的状态大部分可以部化时</strong>，我们就可以考虑选用享元模式 </li>
+<li>用唯一标识码判断，如果在内存中有，则返回这个唯一标识码所标识的对象，用 HashMap/HashTable 存储 </li>
+<li>享元模式大大减少了对象的创建，降低了程序内存的占用，提高效率 </li>
+<li>享元模式提高了<strong>系统的复杂度</strong>。需要分离出<strong>内部状态</strong>和<strong>外部状态</strong>，而外部状态具有固化特性，不应该随着内部 状态的改变而改变，这是我们使用享元模式需要注意的地方</li>
+<li>使用享元模式时，注意划分内部状态和外部状态，并且需要有一个工厂类加以控制</li>
+<li>享元模式经典的应用场景是需要缓冲池的场景，比如 String 常量池、数据库连接池</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -177,351 +264,103 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/29/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/23/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2020-06-23T01:26:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-23</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/23/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">组合模式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/23/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/">组合模式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/设计模式//" class="article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/20/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2020-06-20T08:34:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/20/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">代理模式</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/设计模式//" class="article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/18/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2020-06-18T05:24:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/18/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">Linux基础学习</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/11/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2020-06-11T07:50:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/11/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">建造者模式</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/设计模式//" class="article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/11/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2020-06-11T07:50:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/11/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/">桥接模式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/设计模式//" class="article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/09/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2020-06-09T01:50:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/09/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/">原型设计模式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/设计模式//" class="article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/09/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2020-06-09T01:50:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/09/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/">装饰者模式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/设计模式//" class="article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/08/MySQL%E5%A4%9A%E8%A1%A8&%E4%BA%8B%E5%8A%A1/" class="archive-article-date">
-  	<time datetime="2020-06-08T11:58:42.727Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/08/MySQL%E5%A4%9A%E8%A1%A8&%E4%BA%8B%E5%8A%A1/">MySQL多表&amp;事务</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/08/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2020-06-08T02:50:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/08/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">工厂设计模式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/设计模式//" class="article-tag-list-link color5">设计模式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -549,8 +388,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
