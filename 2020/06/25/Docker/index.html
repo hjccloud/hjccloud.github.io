@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Category: Mybaties | inspire</title>
+  <title>Docker | inspire</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="inspire">
-<meta property="og:url" content="http://yoursite.com/categories/Mybaties/index.html">
+  <meta name="description" content="Docker Docker是一个开源的应用容器引擎；是一个轻量级容器技术；Docker支持将软件编译成一个镜像,然后在镜像中各种软件做好配置，将镜像发布出去，其他使用者可以直接使 用这个镜像；运行中的这个镜像称为容器，容器启动是非常快速的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker">
+<meta property="og:url" content="http://yoursite.com/2020/06/25/Docker/index.html">
 <meta property="og:site_name" content="inspire">
+<meta property="og:description" content="Docker Docker是一个开源的应用容器引擎；是一个轻量级容器技术；Docker支持将软件编译成一个镜像,然后在镜像中各种软件做好配置，将镜像发布出去，其他使用者可以直接使 用这个镜像；运行中的这个镜像称为容器，容器启动是非常快速的。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/2020/06/25/Docker/%5Cimages%5Cimage-20200629182113171.png">
+<meta property="og:image" content="http://yoursite.com/2020/06/25/Docker/%5Cimages%5Cimage-20200629182244202.png">
+<meta property="article:published_time" content="2020-06-25T09:36:26.000Z">
+<meta property="article:modified_time" content="2020-06-30T09:20:49.389Z">
 <meta property="article:author" content="Pro He">
+<meta property="article:tag" content="docker">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/06/25/Docker/%5Cimages%5Cimage-20200629182113171.png">
   
     <link rel="alternative" href="/atom.xml" title="inspire" type="application/atom+xml">
   
@@ -134,71 +142,239 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Docker" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/01/Mybatis%E6%B5%81%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2020-06-01T06:13:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/01/Mybatis%E6%B5%81%E7%A8%8B/">Mybatis框架基本工作流程</a>
+    <h1 class="article-title" itemprop="name">
+      Docker
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/06/25/Docker/" class="archive-article-date">
+  	<time datetime="2020-06-25T09:36:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><blockquote>
+<p>Docker是一个开源的应用容器引擎；是一个轻量级容器技术；<br>Docker支持将软件编译成一个<strong>镜像</strong>,然后在镜像中各种软件做好配置，将镜像发布出去，其他使用者可以直接使 用这个镜像；<br>运行中的这个镜像称为<strong>容器</strong>，容器启动是非常<strong>快速</strong>的。</p>
+</blockquote>
+<a id="more"></a>
+
+<p><img src="%5Cimages%5Cimage-20200629182113171.png" alt="image-20200629182113171"></p>
+<h3 id="1、核心概念："><a href="#1、核心概念：" class="headerlink" title="1、核心概念："></a>1、核心概念：</h3><p><strong>docker主机(Host)：</strong>安装了Docker程序的机器（Docker直接安装在操作系统之上）； </p>
+<p><strong>docker客户端(Client)：</strong>连接docker主机进行操作；</p>
+<p><strong>docker仓库(Registry)：</strong>用来保存各种打包好的软件镜像；<br><strong>docker镜像(Images)：</strong>软件打包好的镜像；放在docker仓库中； </p>
+<p><strong>docker容器(Container)</strong>：镜像启动后的实例称为一个容器；容器是独立运行的一个或一组应用</p>
+<p><img src="%5Cimages%5Cimage-20200629182244202.png" alt="image-20200629182244202"></p>
+<p><strong>使用docker的基本步骤：</strong></p>
+<p>1、安装docker</p>
+<p>2、去Docker仓库找到这个软件对应的镜像</p>
+<p>3、使用Docker运行这个镜像，这个镜像就会生成一个Docker容器</p>
+<p>4、对容器的启动停止就是对软件的启动停止</p>
+<h3 id="2、安装docker"><a href="#2、安装docker" class="headerlink" title="2、安装docker"></a>2、安装docker</h3><p><strong>在linux虚拟机上安装docker</strong></p>
+<p>步骤：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">1、检查内核版本，必须是3.10及以上 </span><br><span class="line">uname ‐r </span><br><span class="line">2、安装</span><br><span class="line">docker yum install docker </span><br><span class="line">3、输入y确认安装 </span><br><span class="line">4、启动docker </span><br><span class="line">systemctl start docker </span><br><span class="line"></span><br><span class="line">docker ‐v   </span><br><span class="line">Docker version 1.12.6, build 3e8e77d/1.12.6 </span><br><span class="line">5、开机启动docker </span><br><span class="line">systemctl enable docker </span><br><span class="line"></span><br><span class="line">Created symlink from /etc/systemd/system/multi‐user.target.wants/docker.service to  /usr/lib/systemd/system/docker.service. </span><br><span class="line">6、停止docker </span><br><span class="line">systemctl stop docker</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3、docker常用命令和操作"><a href="#3、docker常用命令和操作" class="headerlink" title="3、docker常用命令和操作"></a>3、docker常用命令和操作</h3><p>1、镜像操作：</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>检索</td>
+<td>docker search 关键字</td>
+<td>docker hub上检索镜像的详细信息</td>
+</tr>
+<tr>
+<td>拉取</td>
+<td>docker pull 镜像名：tag</td>
+<td>从docker hub上拉取所需要的镜像，tag表示标签，多为软件的版本，默认是latest（最新）</td>
+</tr>
+<tr>
+<td>列表</td>
+<td>docker images</td>
+<td>查看本地已经安装的镜像</td>
+</tr>
+<tr>
+<td>删除</td>
+<td>docker rmi 镜像id</td>
+<td>删除指定的本地镜像</td>
+</tr>
+</tbody></table>
+<p>2、容器操作：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">1、搜索镜像</span></span><br><span class="line">docker search tomcat</span><br><span class="line"><span class="meta">#</span><span class="bash">2、拉取镜像</span></span><br><span class="line">docker pull tomcat</span><br><span class="line"><span class="meta">#</span><span class="bash">3、根据镜像启动容器</span></span><br><span class="line">docker run --name mytomcat -d tomcat:latest</span><br><span class="line"><span class="meta">#</span><span class="bash">4、查看运行中的容器</span></span><br><span class="line">docker ps -a</span><br><span class="line"><span class="meta">#</span><span class="bash">5、停止运行中的容器</span></span><br><span class="line">docker stop 容器的id</span><br><span class="line"><span class="meta">#</span><span class="bash">6、启动容器</span></span><br><span class="line">docker start 容器的id</span><br><span class="line"><span class="meta">#</span><span class="bash">7、删除一个容器</span></span><br><span class="line">docker rm 容器的id</span><br><span class="line"><span class="meta">#</span><span class="bash">8、启动一个做了端口映射的tomcat</span></span><br><span class="line"><span class="meta">#</span><span class="bash">docker run -d -p 8888:8080 tmocat</span></span><br><span class="line">-d：后台运行</span><br><span class="line">-p：将主机的端口映射到容器的一个端口  主机端口：容器内部的端口</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Mybaties</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Mybaties//" class="article-tag-list-link color4">Mybaties</a>
+        			<a href="/categories/docker//" class="article-tag-list-link color2">docker</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/25/Docker/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/06/29/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          享元模式
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2020/06/23/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">组合模式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -225,10 +401,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
