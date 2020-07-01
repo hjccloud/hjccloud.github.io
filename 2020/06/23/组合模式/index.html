@@ -170,54 +170,7 @@
         
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="组合模式"><a href="#组合模式" class="headerlink" title="组合模式"></a>组合模式</h2><blockquote>
-<p>组合模式（Composite Pattern），又叫<strong>部分整体模式</strong>，它创建了对象组的树形结构，将对象组合成树状结构以 表示“<strong>整体-部分</strong>”的层次关系。 </p>
-</blockquote>
-<a id="more"></a>
-
-<blockquote>
-<p>组合模式依据树形结构来组合对象，用来表示部分以及整体层次</p>
-<p>组合模式使得用户对单个对象和组合对象的访问具有一致性，即：组合能让客户以一致的方式处理个别对象以及组合对象</p>
-</blockquote>
-<h3 id="组合模式原理类图"><a href="#组合模式原理类图" class="headerlink" title="组合模式原理类图"></a>组合模式原理类图</h3><p><img src="/images/image-20200627155635884.png" alt="image-20200627155635884"></p>
-<p><strong>Component：</strong>这是组合中对象声明接口，在适当情况下，实现所有类共有的接口默认行为，用于访问和管理Component子部件，Component可以是抽象类或者接口</p>
-<p><strong>Leaf：</strong>在组合中表示叶子结点，叶子结点没有子节点</p>
-<p><strong>Composite：</strong>非叶子节点，用于存储子部件，在component接口中实现子部件的相关操作</p>
-<h3 id="组合模式的注意事项和细节"><a href="#组合模式的注意事项和细节" class="headerlink" title="组合模式的注意事项和细节"></a>组合模式的注意事项和细节</h3><ul>
-<li>简化客户端操作。客户端只需要面对一致的对象而不用考虑整体部分或者节点叶子的问题</li>
-<li>具有较强的扩展性。当我们要更改组合对象时，我们只需要调整内部的层次关系，客户端不用做出任何改动</li>
-<li>方便创建出复杂的层次结构。客户端不用理会组合里面的组成细节，容易添加节点或者叶子从而创建出<strong>复杂的树形结构</strong> </li>
-<li>需要<strong>遍历</strong>组织机构，或者处理的对象具有<strong>树形结构</strong>时, 非常适合使用组合模式</li>
-<li>要求较高的抽象性，如果节点和叶子有很多差异性的话，比如很多方法和属性都不一样，不适合使用组合模式</li>
-</ul>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
+    
     <div class="article-info article-info-index">
       
       
@@ -306,8 +259,8 @@
     </a>
   
   
-    <a href="/2020/06/20/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">代理模式</div>
+    <a href="/2020/06/23/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F%20-%20%E5%89%AF%E6%9C%AC/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">组合模式</div>
       <i class="icon-circle-right"></i>
     </a>
   

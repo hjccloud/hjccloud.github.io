@@ -170,70 +170,7 @@
         
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="原型设计模式"><a href="#原型设计模式" class="headerlink" title="原型设计模式"></a>原型设计模式</h2><h2 id="建造者模式"><a href="#建造者模式" class="headerlink" title="建造者模式"></a>建造者模式</h2><h3 id="1、建造者模式基本介绍"><a href="#1、建造者模式基本介绍" class="headerlink" title="1、建造者模式基本介绍"></a>1、建造者模式基本介绍</h3><ul>
-<li><p>建造者模式（BuilderPattern） 又叫生成器模式，是一种对象构建模式。它可以将复杂对象的建造过程抽象出来（抽象类别），使这个抽象过程的不同实现方法可以构造出不同表现（属性）的对象</p>
-</li>
-<li><p>建造者模式 是一步一步创建一个复杂的对象，它允许用户只通过指定复杂对象的类型和内容就可以构建它们，用户不需要知道内部的具体构建细节</p>
-</li>
-<li><a id="more"></a>
-
-
-
-</li>
-</ul>
-<h3 id="2、建造者模式的四个角色"><a href="#2、建造者模式的四个角色" class="headerlink" title="2、建造者模式的四个角色"></a>2、建造者模式的四个角色</h3><p>1、Product（产品角色）：一个具体的产品对象</p>
-<p>2、Builder（抽象建造者）：创建一个Product对象的各个部件指定的接口/抽象类</p>
-<p>3、ConcreteBuilder（具体建造者）：实现Builder接口，具体构建和装配各个部件</p>
-<p>4、Director（指挥者）：构建一个使用Builder接口的对象，它主要是用于创建一个复杂的对象。他这主要有两个作用：一是：隔离了客户与对象的生产过程。二是：负责控制产品对象的生产过程</p>
-<h3 id="3、建造者模式原理类图"><a href="#3、建造者模式原理类图" class="headerlink" title="3、建造者模式原理类图"></a>3、建造者模式原理类图</h3><p><img src="/images/image-20200622182540355.png" alt="image-20200622182540355"></p>
-<h3 id="4、建造者模式的注意事项和细节"><a href="#4、建造者模式的注意事项和细节" class="headerlink" title="4、建造者模式的注意事项和细节"></a>4、建造者模式的注意事项和细节</h3><ul>
-<li><p>客户端(使用程序)不必知道产品内部组成的细节，将产品本身与产品的创建过程解耦，使得相同的创建过程可以创建不同的产品对象 </p>
-</li>
-<li><p>每一个具体建造者都相对独立，而与其他的具体建造者无关，因此可以很方便地替换具体建造者或增加新的具体建造者， 用户使用不同的具体建造者即可得到不同的产品对象</p>
-</li>
-<li><p>可以更加精细地控制产品的创建过程 。将复杂产品的创建步骤分解在不同的方法中，使得创建过程更加清晰，也更方便使用程序来控制创建过程 </p>
-</li>
-<li><p>增加新的具体建造者无须修改原有类库的代码，指挥者类针对抽象建造者类编程，系统扩展方便，符合“<strong>开闭原则</strong>” </p>
-</li>
-<li><p>建造者模式所创建的产品一般具有较多的共同点，其<strong>组成部分相似</strong>，如果产品之间的差异性很大，则不适合使用建造者模式，因此其使用范围受到一定的限制</p>
-</li>
-<li><p>如果产品的内部变化复杂，可能会<strong>导致需要定义很多具体建造者类</strong>来实现这种变化，导致系统变得很庞大，因 此在这种情况下，要考虑是否选择建造者模式</p>
-</li>
-<li><p>抽象工厂模式 VS 建造者模式</p>
-<ul>
-<li>抽象工厂模式：一个产品家族是这样的一系列产品，具有不同分类维度的产品组合，采用抽象工厂模式不需要关心构建过程，只关心什么产品由什么工厂生产即可</li>
-<li>建造者模式：要求按照指定的蓝图建造产品，它的主要目的是通过组装零配件而产生一个新产品</li>
-</ul>
-</li>
-</ul>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
+    
     <div class="article-info article-info-index">
       
       
