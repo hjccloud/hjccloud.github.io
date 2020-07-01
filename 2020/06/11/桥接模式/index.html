@@ -15,14 +15,14 @@
 <meta property="og:site_name" content="inspire">
 <meta property="og:description" content="桥接模式桥接模式基本介绍 桥接模式(Bridge 模式)是指：将实现与抽象放在两个不同的类层次中，使两个层次可以独立改变。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/2020/06/11/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/%5Cimages%5Cimage-20200623151937605.png">
-<meta property="og:image" content="http://yoursite.com/2020/06/11/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/%5Cimages%5Cimage-20200623152241636.png">
-<meta property="og:image" content="http://yoursite.com/2020/06/11/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/%5Cimages%5Cimage-20200623152433092.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200623151937605.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200623152241636.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200623152433092.png">
 <meta property="article:published_time" content="2020-06-11T07:50:39.000Z">
-<meta property="article:modified_time" content="2020-06-27T07:50:58.715Z">
+<meta property="article:modified_time" content="2020-07-01T06:35:15.858Z">
 <meta property="article:author" content="Pro He">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/06/11/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/%5Cimages%5Cimage-20200623151937605.png">
+<meta name="twitter:image" content="http://yoursite.com/images/image-20200623151937605.png">
   
     <link rel="alternative" href="/atom.xml" title="inspire" type="application/atom+xml">
   
@@ -167,7 +167,7 @@
 </blockquote>
 <a id="more"></a>
 
-<h3 id="桥接模式原理类图"><a href="#桥接模式原理类图" class="headerlink" title="桥接模式原理类图"></a>桥接模式原理类图</h3><p><img src="%5Cimages%5Cimage-20200623151937605.png" alt="image-20200623151937605"></p>
+<h3 id="桥接模式原理类图"><a href="#桥接模式原理类图" class="headerlink" title="桥接模式原理类图"></a>桥接模式原理类图</h3><p><img src="/images/image-20200623151937605.png" alt="image-20200623151937605"></p>
 <ul>
 <li><p>抽象类(Abstraction):维护了 Implementor / 即它的实现类 ConcreteImplementorA.., 二者是聚合关系,Abstraction充当桥接类 </p>
 </li>
@@ -180,14 +180,14 @@
 <li><p>这里的抽象类和接口是聚合的关系，其实调用和被调用关系 </p>
 </li>
 </ul>
-<h3 id="使用桥接模式解决手机问题"><a href="#使用桥接模式解决手机问题" class="headerlink" title="使用桥接模式解决手机问题"></a>使用桥接模式解决手机问题</h3><p><img src="%5Cimages%5Cimage-20200623152241636.png" alt="image-20200623152241636"></p>
+<h3 id="使用桥接模式解决手机问题"><a href="#使用桥接模式解决手机问题" class="headerlink" title="使用桥接模式解决手机问题"></a>使用桥接模式解决手机问题</h3><p><img src="/images/image-20200623152241636.png" alt="image-20200623152241636"></p>
 <h3 id="桥接模式在JDBC源码中的应用"><a href="#桥接模式在JDBC源码中的应用" class="headerlink" title="桥接模式在JDBC源码中的应用"></a>桥接模式在JDBC源码中的应用</h3><ul>
 <li><p>Jdbc 的 <strong>Driver 接口</strong>，如果从桥接模式来看，Driver 就是一个接口，下面可以有 MySQL 的 Driver，Oracle 的 Driver，这些就可以当做实现接口类 </p>
 </li>
 <li><p>对JDBC源码分析的类图</p>
 </li>
 </ul>
-<p><img src="%5Cimages%5Cimage-20200623152433092.png" alt="image-20200623152433092"></p>
+<p><img src="/images/image-20200623152433092.png" alt="image-20200623152433092"></p>
 <h3 id="桥接模式的注意事项和细节"><a href="#桥接模式的注意事项和细节" class="headerlink" title="桥接模式的注意事项和细节"></a>桥接模式的注意事项和细节</h3><ul>
 <li>实现了抽象和事项部分的分离，从而极大的提供了系统的灵活性，让抽象部分和实现分离开来，这有助于系统进行分层设计，从而产生更好的结构化系统</li>
 <li>对于系统的高层部分，只需要知道抽象部分和实现部分的接口就可以了，其它的部分由具体业务来完成</li>
