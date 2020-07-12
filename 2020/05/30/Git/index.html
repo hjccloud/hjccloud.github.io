@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.jng">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.jng">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://yoursite.com').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="git 基本操作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git的基本用法">
+<meta property="og:url" content="http://yoursite.com/2020/05/30/Git/index.html">
+<meta property="og:site_name" content="inspire">
+<meta property="og:description" content="git 基本操作">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/fdc20d9adc5b4db7b84f1d8bf5cda400-124524">
+<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/24b6d915a59dfee89019d303e78c5419-669636">
+<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/9dac63bc74e47157ca16687ca5e99c13-1708">
+<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/919e991fa966fb22cc24474d7add34b7-2908">
+<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/889a54dc56993a9c02b1019845823d35-2570">
+<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/6c9c0896c97abe12338cad63fcefdf7e-111355">
+<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/b2c69f96a4a11a4501c94d381e255d23-142743">
+<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/5aff055aef1a059451c7904967c0b36b-130705">
+<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/0e9351aea39e901789609cedb9c6f0ed-652455">
+<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/c22ad78f2c500bf8969f6316bc788ec3-449038">
+<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/60ad616c74a135e518e5a3670e7ebed4-303478">
+<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/75baefef360463d84319022fd5618b71-48662">
+<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/04c3ebd87b3f7d212730d5f2d1157326-58836">
+<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/b393cc2dc8c673f42b1c933486876ef4-12927">
+<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/356425cb506d3f66c212543954c7c24a-30314">
+<meta property="og:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/066bc341a4468e7edbf7daeb7242711f-1244210">
+<meta property="article:published_time" content="2020-05-30T08:15:35.000Z">
+<meta property="article:modified_time" content="2020-06-05T14:04:15.461Z">
+<meta property="article:author" content="Pro He">
+<meta property="article:tag" content="git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://app.yinxiang.com/FileSharing.action?hash=1/fdc20d9adc5b4db7b84f1d8bf5cda400-124524">
+
+<link rel="canonical" href="http://yoursite.com/2020/05/30/Git/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>git的基本用法 | inspire</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b759ac2a7fa45129e3ef060bf68259f0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">inspire</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/hjccloud" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/Git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon.jpg">
+      <meta itemprop="name" content="Pro He">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="inspire">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          git的基本用法
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-30 16:15:35" itemprop="dateCreated datePublished" datetime="2020-05-30T16:15:35+08:00">2020-05-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="git-基本操作"><a href="#git-基本操作" class="headerlink" title="git 基本操作"></a>git 基本操作</h3><a id="more"></a>
+
+<h4 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h4><blockquote>
+<p>git常用命令及运行图</p>
+</blockquote>
+<p><img src="https://app.yinxiang.com/FileSharing.action?hash=1/fdc20d9adc5b4db7b84f1d8bf5cda400-124524" alt="img"></p>
+<p>​    2. git下载</p>
+<p>​      <a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com</a>  </p>
+<ol start="3">
+<li>git 注册登陆</li>
+</ol>
+<ul>
+<li><strong>从git克隆仓库到本地：git→本地</strong></li>
+</ul>
+<p>​    <strong>github创建仓库（repositories）：</strong>设置时默认创建read.md ，可预设格式（如java）</p>
+<p>​    <strong>github创建ssh密钥：</strong></p>
+<p>​    1.在本地创建工作区（文件夹），然后右键-git bash here ；</p>
+<p>​    2.在弹出的窗口输入 <strong>$ ssh-keygen -t rsa -b 4096 -C “your_ emai L@example. com”</strong>，连续回车</p>
+<p>​    3.继续输入 <strong>ssh/id rsa. pub</strong>，没有报错即成功 </p>
+<p>​    4.终端中有公共密钥和私有密钥的路径， 路径里找到 .ssh 目录，里面有 id_rsa 和 id_rsa.pub 两个文件，这两个就是SSH Key 的秘钥对，<strong>id_rsa 是私钥，不能泄露出去</strong>，id_rsa.pub是公钥，可以放心地告诉任何人。用记事本打开 id_rsa.pub（C:\Users\Administrator.ssh），复制ssh key 公钥。 </p>
+<p>​    <img src="https://app.yinxiang.com/FileSharing.action?hash=1/24b6d915a59dfee89019d303e78c5419-669636" alt="img"></p>
+<p>​     5.回到github，点击头像找到<img src="https://app.yinxiang.com/FileSharing.action?hash=1/9dac63bc74e47157ca16687ca5e99c13-1708" alt="img">)并点击，再点击左边的<img src="https://app.yinxiang.com/FileSharing.action?hash=1/919e991fa966fb22cc24474d7add34b7-2908" alt="img">)，点击右边的<img src="https://app.yinxiang.com/FileSharing.action?hash=1/889a54dc56993a9c02b1019845823d35-2570" alt="img"></p>
+<p> <img src="https://app.yinxiang.com/FileSharing.action?hash=1/6c9c0896c97abe12338cad63fcefdf7e-111355" alt="img"></p>
+<p>​     </p>
+<p>  写好title，黏贴刚刚得到的密钥，生成SSH密钥</p>
+<p><img src="https://app.yinxiang.com/FileSharing.action?hash=1/b2c69f96a4a11a4501c94d381e255d23-142743" alt="img"></p>
+<p>​    <strong>克隆仓库</strong></p>
+<p>​    \1. 回到刚刚新建的仓库，点击clone，点击use ssh，复制链接</p>
+<p>​     <img src="https://app.yinxiang.com/FileSharing.action?hash=1/5aff055aef1a059451c7904967c0b36b-130705" alt="img"></p>
+<p>   2.在刚刚打开的gitbash窗口，输入 <strong>$ git clone + 刚刚复制的链接</strong>，回车，克隆成功！</p>
+<ul>
+<li><strong>本地上传文件到github：本地→github</strong></li>
+</ul>
+<p>​    1.在本地工作区中右键-git bash here ；</p>
+<p>​    2.输入 <strong>$ git status</strong> 查看状态，其中untracked files 下的内容是未提交到git的文件</p>
+<p><img src="https://app.yinxiang.com/FileSharing.action?hash=1/0e9351aea39e901789609cedb9c6f0ed-652455" alt="img"></p>
+<p>​    3. 上传跟踪项目文件夹中的所有文件和文件夹 ：</p>
+<p>​     输入 <strong>$ git add .</strong> </p>
+<p>​      上传文件： </p>
+<p>​     输入 <strong>$ git add xxx.txt</strong></p>
+<p><strong>（这里可以加一步，当你不知道该怎么写可以直接先commit，这样会提示你</strong></p>
+<p><strong>（提交）git commit  -m “commit first”</strong></p>
+<p> <strong>Please tell me who you are.</strong></p>
+<p><strong>Run</strong></p>
+<p>  <strong>git config –global user.email “<a href="mailto:you@example.com">you@example.com</a>“</strong><br>  <strong>git config –global user.name “Your Name”）</strong></p>
+<p>​    4.<strong>绑定github账号：</strong></p>
+<p>​     输入 <strong>$ git config –global user . email “you@example. com</strong> 和</p>
+<p>​         <strong>$ git config-g lobal user. name Your Name”</strong> </p>
+<p>​    \5. <strong>commit</strong> :</p>
+<p>​     输入 <strong>$ git commit -m ‘ XXXX文件描述’</strong></p>
+<p>​    \6. <strong>push ：</strong></p>
+<p>​     输入 <strong>$git push，</strong>成功上传</p>
+<ul>
+<li><p><strong>解决冲突</strong></p>
+<p> <strong>git push时若提醒非最新版本，如下图：</strong></p>
+</li>
+</ul>
+<p><img src="https://app.yinxiang.com/FileSharing.action?hash=1/c22ad78f2c500bf8969f6316bc788ec3-449038" alt="img"></p>
+<p><strong>则需要解决冲突，输入git pull ，会提示哪个冲突文件已经合并</strong></p>
+<p><img src="https://app.yinxiang.com/FileSharing.action?hash=1/60ad616c74a135e518e5a3670e7ebed4-303478" alt="img"></p>
+<p><strong>git status会提示你可以做两个操作，一个是解决冲突conflg后commit提交，一个是合并git merge</strong></p>
+<p><img src="https://app.yinxiang.com/FileSharing.action?hash=1/75baefef360463d84319022fd5618b71-48662" alt="img"></p>
+<p><strong>打开冲突文件，可以看到多了冲突内容，只要删除红框内容保存文件即为解决冲突，按正常流程add →commit→ push即可</strong></p>
+<p><img src="https://app.yinxiang.com/FileSharing.action?hash=1/04c3ebd87b3f7d212730d5f2d1157326-58836" alt="img"></p>
+<p><strong>如果是合并，输入git merge +目标分支，即把目标分支合并到当前分支上</strong></p>
+<p><strong>git merge 以后先git pull 拉取一下最新数据 ，最后git push，</strong></p>
+<p><strong>如git merge 的分支没有在本地上(如下图提示)，可以输入**</strong>git merge origin/被拉取的非本地分支名称,**</p>
+<p><strong><img src="https://app.yinxiang.com/FileSharing.action?hash=1/b393cc2dc8c673f42b1c933486876ef4-12927" alt="img"></strong></p>
+<ul>
+<li><p><strong>工作流</strong></p>
+<p> 1.创建分支 ：输入<strong>git branch 分支名称</strong></p>
+</li>
+</ul>
+<p>​    2.更改分支到当前分支上：输入<strong>gir checkout</strong> <strong>分支名称</strong> </p>
+<p>​    3.以上步骤可以合并到一个命令：输入<strong>git checkout -b</strong> <strong>分支名称</strong></p>
+<p>​    4.add →commit→ push 后，push提示需要在远程生成branch，输入 <strong>git push – set-upstream origin 分支名称</strong>，即可同时提交和创建远端新分支</p>
+<p><img src="https://app.yinxiang.com/FileSharing.action?hash=1/356425cb506d3f66c212543954c7c24a-30314" alt="img"></p>
+<ul>
+<li><strong>用ｉｄｅ解决冲突</strong></li>
+</ul>
+<p><img src="https://app.yinxiang.com/FileSharing.action?hash=1/066bc341a4468e7edbf7daeb7242711f-1244210" alt="img"></p>
+<p>　<strong>ｉｄｅ的terminal　对比修改分支内容，并且保存，较传统方式更为直观</strong></p>
+<ul>
+<li><strong>其他操作</strong></li>
+</ul>
+<p>​    1.日志查询：</p>
+<p>​      输入 <strong>$ git log</strong> </p>
+<p>​    2.可以看到某commit id做了什么：</p>
+<p>​      输入 <strong>$ git show + 日志中的commit id</strong></p>
+<p>​    3.重置commit 操作：</p>
+<p>​      输入 <strong>$ git reset + 日志中的commit id</strong></p>
+<p>​    4.查看本地和git仓库的状态：</p>
+<p>​      输入 <strong>$ git status</strong></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/public/tags/git/" rel="tag"># git</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/30/KMP%E7%AE%97%E6%B3%95/" rel="prev" title="KMP算法">
+      <i class="fa fa-chevron-left"></i> KMP算法
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/06/01/Mybatis%E6%B5%81%E7%A8%8B/" rel="next" title="Mybatis框架基本工作流程">
+      Mybatis框架基本工作流程 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zODU3Mi8xNTEwMA=="></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#git-基本操作"><span class="nav-number">1.</span> <span class="nav-text">git 基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#准备"><span class="nav-number">1.1.</span> <span class="nav-text">准备</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Pro He"
+      src="/images/favicon.jpg">
+  <p class="site-author-name" itemprop="name">Pro He</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="/1467343011@qq.com" title="E-Mail → 1467343011@qq.com"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/hjccloud" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hjccloud" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 2014 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pro He</span>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "topRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  // window.livereOptions = {
+  //   refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  // };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+</body>
+</html>
