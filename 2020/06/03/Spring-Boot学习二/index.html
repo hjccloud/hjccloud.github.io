@@ -44,12 +44,12 @@
   };
 </script>
 
-  <meta name="description" content="Spring-Boot学习二springboot的自动配置及自动配置原理还有日志的使用">
+  <meta name="description" content="springboot的自动配置及自动配置原理，以及日志的使用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring-Boot学习二">
 <meta property="og:url" content="http://yoursite.com/2020/06/03/Spring-Boot%E5%AD%A6%E4%B9%A0%E4%BA%8C/index.html">
 <meta property="og:site_name" content="inspire">
-<meta property="og:description" content="Spring-Boot学习二springboot的自动配置及自动配置原理还有日志的使用">
+<meta property="og:description" content="springboot的自动配置及自动配置原理，以及日志的使用">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180129224104.png">
 <meta property="og:image" content="http://yoursite.com/images/concrete-bindings.png">
@@ -57,7 +57,7 @@
 <meta property="og:image" content="http://yoursite.com/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180131220946.png">
 <meta property="og:image" content="http://yoursite.com/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180131221411.png">
 <meta property="article:published_time" content="2020-06-03T06:13:54.000Z">
-<meta property="article:modified_time" content="2020-06-06T05:12:29.855Z">
+<meta property="article:modified_time" content="2020-07-12T06:43:04.853Z">
 <meta property="article:author" content="Pro He">
 <meta property="article:tag" content="Spring Boot">
 <meta property="article:tag" content="日志">
@@ -281,7 +281,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Spring-Boot学习二"><a href="#Spring-Boot学习二" class="headerlink" title="Spring-Boot学习二"></a>Spring-Boot学习二</h2><p>springboot的自动配置及自动配置原理还有日志的使用</p>
+        <blockquote>
+<p>springboot的自动配置及自动配置原理，以及日志的使用</p>
+</blockquote>
 <hr>
 <a id="more"></a>
 
@@ -521,7 +523,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-Boot学习二"><span class="nav-number">1.</span> <span class="nav-text">Spring-Boot学习二</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简要概述："><span class="nav-number">1.0.1.</span> <span class="nav-text">简要概述：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#补充："><span class="nav-number">1.0.2.</span> <span class="nav-text">补充：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日志"><span class="nav-number">1.1.</span> <span class="nav-text">日志</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、日志框架"><span class="nav-number">1.1.1.</span> <span class="nav-text">1、日志框架</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、-SLF4j使用"><span class="nav-number">1.1.2.</span> <span class="nav-text">2、 SLF4j使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、遗留问题"><span class="nav-number">1.1.3.</span> <span class="nav-text">3、遗留问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">1.1.4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、日志的使用"><span class="nav-number">1.1.5.</span> <span class="nav-text">4、日志的使用</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#简要概述："><span class="nav-number">1.</span> <span class="nav-text">简要概述：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#补充："><span class="nav-number">2.</span> <span class="nav-text">补充：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日志"><span class="nav-number"></span> <span class="nav-text">日志</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、日志框架"><span class="nav-number">1.</span> <span class="nav-text">1、日志框架</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、-SLF4j使用"><span class="nav-number">2.</span> <span class="nav-text">2、 SLF4j使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、遗留问题"><span class="nav-number">3.</span> <span class="nav-text">3、遗留问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、日志的使用"><span class="nav-number">5.</span> <span class="nav-text">4、日志的使用</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -537,20 +539,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

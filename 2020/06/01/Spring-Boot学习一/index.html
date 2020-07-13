@@ -44,16 +44,16 @@
   };
 </script>
 
-  <meta name="description" content="Spring-Boot学习一springBoot的基本入门和yaml语法及配置文件的加载">
+  <meta name="description" content="springBoot的基本入门和yaml语法及配置文件的加载">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring-Boot学习一">
 <meta property="og:url" content="http://yoursite.com/2020/06/01/Spring-Boot%E5%AD%A6%E4%B9%A0%E4%B8%80/index.html">
 <meta property="og:site_name" content="inspire">
-<meta property="og:description" content="Spring-Boot学习一springBoot的基本入门和yaml语法及配置文件的加载">
+<meta property="og:description" content="springBoot的基本入门和yaml语法及配置文件的加载">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/%E6%90%9C%E7%8B%97%E6%88%AA%E5%9B%BE20180130161620.png">
 <meta property="article:published_time" content="2020-06-01T06:13:34.000Z">
-<meta property="article:modified_time" content="2020-06-06T05:06:02.899Z">
+<meta property="article:modified_time" content="2020-07-12T06:41:27.070Z">
 <meta property="article:author" content="Pro He">
 <meta property="article:tag" content="Spring Boot">
 <meta property="article:tag" content="yaml">
@@ -277,7 +277,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Spring-Boot学习一"><a href="#Spring-Boot学习一" class="headerlink" title="Spring-Boot学习一"></a>Spring-Boot学习一</h2><p>springBoot的基本入门和yaml语法及配置文件的加载</p>
+        <blockquote>
+<p>springBoot的基本入门和yaml语法及配置文件的加载</p>
+</blockquote>
 <a id="more"></a>
 
 <h4 id="1-IDEA-使用Spring-Initializer快速创建项目"><a href="#1-IDEA-使用Spring-Initializer快速创建项目" class="headerlink" title="1.IDEA:使用Spring Initializer快速创建项目"></a>1.IDEA:使用Spring Initializer快速创建项目</h4><p>IDE都支持使用Spring的项目创建想到快速创建一个Spring Boot项目；</p>
@@ -537,7 +539,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-Boot学习一"><span class="nav-number">1.</span> <span class="nav-text">Spring-Boot学习一</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-IDEA-使用Spring-Initializer快速创建项目"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.IDEA:使用Spring Initializer快速创建项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-配置文件"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. 配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组（List、Set）："><span class="nav-number">1.0.3.</span> <span class="nav-text">数组（List、Set）：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置文件数据的注入"><span class="nav-number">1.0.4.</span> <span class="nav-text">配置文件数据的注入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、配置文件注入值数据校验"><span class="nav-number">1.0.5.</span> <span class="nav-text">4、配置文件注入值数据校验</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、-PropertySource-amp-ImportResource-amp-Bean"><span class="nav-number">1.0.6.</span> <span class="nav-text">5、@PropertySource&amp;@ImportResource&amp;@Bean</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、配置文件加载位置"><span class="nav-number">1.0.7.</span> <span class="nav-text">5、配置文件加载位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、外部配置加载顺序"><span class="nav-number">1.0.8.</span> <span class="nav-text">6、外部配置加载顺序</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-IDEA-使用Spring-Initializer快速创建项目"><span class="nav-number">1.</span> <span class="nav-text">1.IDEA:使用Spring Initializer快速创建项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-配置文件"><span class="nav-number">2.</span> <span class="nav-text">2. 配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组（List、Set）："><span class="nav-number">3.</span> <span class="nav-text">数组（List、Set）：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置文件数据的注入"><span class="nav-number">4.</span> <span class="nav-text">配置文件数据的注入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、配置文件注入值数据校验"><span class="nav-number">5.</span> <span class="nav-text">4、配置文件注入值数据校验</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、-PropertySource-amp-ImportResource-amp-Bean"><span class="nav-number">6.</span> <span class="nav-text">5、@PropertySource&amp;@ImportResource&amp;@Bean</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、配置文件加载位置"><span class="nav-number">7.</span> <span class="nav-text">5、配置文件加载位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、外部配置加载顺序"><span class="nav-number">8.</span> <span class="nav-text">6、外部配置加载顺序</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -553,20 +555,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

@@ -44,12 +44,12 @@
   };
 </script>
 
-  <meta name="description" content="JVM垃圾回收 Java 的自动内存管理主要是针对对象内存的回收和对象内存的分配。同时，Java 自动内存管理最核心的功能是 堆 内存中对象的分配与回收。">
+  <meta name="description" content="Java 的自动内存管理主要是针对对象内存的回收和对象内存的分配。同时，Java 自动内存管理最核心的功能是 堆 内存中对象的分配与回收。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM垃圾回收">
 <meta property="og:url" content="http://yoursite.com/2020/07/01/JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/index.html">
 <meta property="og:site_name" content="inspire">
-<meta property="og:description" content="JVM垃圾回收 Java 的自动内存管理主要是针对对象内存的回收和对象内存的分配。同时，Java 自动内存管理最核心的功能是 堆 内存中对象的分配与回收。">
+<meta property="og:description" content="Java 的自动内存管理主要是针对对象内存的回收和对象内存的分配。同时，Java 自动内存管理最核心的功能是 堆 内存中对象的分配与回收。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/image-20200702172825439.png">
 <meta property="og:image" content="http://yoursite.com/images/image-20200702173917663.png">
@@ -57,7 +57,7 @@
 <meta property="og:image" content="http://yoursite.com/images/image-20200702175920503.png">
 <meta property="og:image" content="http://yoursite.com/images/image-20200702175247070.png">
 <meta property="article:published_time" content="2020-07-01T09:25:24.000Z">
-<meta property="article:modified_time" content="2020-07-04T09:06:15.538Z">
+<meta property="article:modified_time" content="2020-07-12T07:00:33.976Z">
 <meta property="article:author" content="Pro He">
 <meta property="article:tag" content="JVM">
 <meta property="article:tag" content="JVM垃圾回收">
@@ -281,7 +281,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="JVM垃圾回收"><a href="#JVM垃圾回收" class="headerlink" title="JVM垃圾回收"></a>JVM垃圾回收</h2><blockquote>
+        <blockquote>
 <p>Java 的自动内存管理主要是针对对象内存的回收和对象内存的分配。同时，Java 自动内存管理最核心的功能是 <strong>堆</strong> 内存中对象的分配与回收。</p>
 </blockquote>
 <a id="more"></a>
@@ -444,7 +444,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JVM垃圾回收"><span class="nav-number">1.</span> <span class="nav-text">JVM垃圾回收</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、JVM内存分配"><span class="nav-number">1.1.</span> <span class="nav-text">一、JVM内存分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、判断对象是否已经死亡"><span class="nav-number">1.2.</span> <span class="nav-text">二、判断对象是否已经死亡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、垃圾收集算法"><span class="nav-number">1.3.</span> <span class="nav-text">3、垃圾收集算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、标记-清除算法"><span class="nav-number">1.3.1.</span> <span class="nav-text">1、标记-清除算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、复制算法"><span class="nav-number">1.3.2.</span> <span class="nav-text">2、复制算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、标记-整理算法（压缩）"><span class="nav-number">1.3.3.</span> <span class="nav-text">3、标记-整理算法（压缩）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分代收集算法"><span class="nav-number">1.3.4.</span> <span class="nav-text">分代收集算法</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、JVM内存分配"><span class="nav-number">1.</span> <span class="nav-text">一、JVM内存分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、判断对象是否已经死亡"><span class="nav-number">2.</span> <span class="nav-text">二、判断对象是否已经死亡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、垃圾收集算法"><span class="nav-number">3.</span> <span class="nav-text">3、垃圾收集算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、标记-清除算法"><span class="nav-number">3.1.</span> <span class="nav-text">1、标记-清除算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、复制算法"><span class="nav-number">3.2.</span> <span class="nav-text">2、复制算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、标记-整理算法（压缩）"><span class="nav-number">3.3.</span> <span class="nav-text">3、标记-整理算法（压缩）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分代收集算法"><span class="nav-number">3.4.</span> <span class="nav-text">分代收集算法</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -460,20 +460,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
