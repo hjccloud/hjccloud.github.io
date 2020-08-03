@@ -51,16 +51,16 @@
 <meta property="og:site_name" content="inspire">
 <meta property="og:description" content="synchronized是我们接触到并发操作的时候，最先出现同步的概念。 synchronized关键字是并发编程不可或缺的部分，下面我们将展开对它具体的研究">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="d:%5Cnodejs%5Cblog%5Csource%5Cimages%5Cimage-20200727170035035.png">
-<meta property="og:image" content="d:%5Cnodejs%5Cblog%5Csource%5Cimages%5Cimage-20200727170350933.png">
-<meta property="og:image" content="d:%5Cnodejs%5Cblog%5Csource%5Cimages%5Cimage-20200727170453599.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727170035035.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727170350933.png">
+<meta property="og:image" content="http://yoursite.com/images/image-20200727170453599.png">
 <meta property="article:published_time" content="2020-07-27T08:20:42.000Z">
-<meta property="article:modified_time" content="2020-07-27T09:16:02.345Z">
+<meta property="article:modified_time" content="2020-08-03T01:43:58.520Z">
 <meta property="article:author" content="Pro He">
 <meta property="article:tag" content="synchronized">
 <meta property="article:tag" content="并发">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="d:%5Cnodejs%5Cblog%5Csource%5Cimages%5Cimage-20200727170035035.png">
+<meta name="twitter:image" content="http://yoursite.com/images/image-20200727170035035.png">
 
 <link rel="canonical" href="http://yoursite.com/2020/07/27/%E5%88%86%E6%9E%90synchronized%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86/">
 
@@ -306,7 +306,7 @@
 <h3 id="3、synchronized锁的实现"><a href="#3、synchronized锁的实现" class="headerlink" title="3、synchronized锁的实现"></a>3、synchronized锁的实现</h3><p>前面我们已经知道了synchronized有两种形式上锁，一个是对方法上锁，一个是构造同步代码块。他们的底层实现其实都一样，<strong>在进入同步代码之前，获取到锁成功锁的计数器+1，同步代码执行完后锁的计数器-1。</strong>如果获取锁失败就阻塞等待锁的释放。只是这两种在同步块识别方式有所不一样，通过class字节码文件可以知道，一个是通过设置flags标志，一个是monitorenter和moniterexit指令操作</p>
 <ol>
 <li><p><strong>同步代码块</strong></p>
-<p><img src="D:%5Cnodejs%5Cblog%5Csource%5Cimages%5Cimage-20200727170035035.png" alt="image-20200727170035035"></p>
+<p><img src="/images/image-20200727170035035.png" alt="image-20200727170035035"></p>
 </li>
 </ol>
 <p>从反编译的同步代码块可以看到同步块是由monitorenter指令进入，然后monitorexit释放锁，在执行monitorenter之前需要尝试获取锁，如果这个对象没有被锁定，或者当前线程已经拥有了这个对象的锁，那么就把锁的计数器加1。当执行monitorexit指令时，锁的计数器也会减1。当获取锁失败时会被阻塞，一直等待锁被释放。</p>
@@ -314,10 +314,10 @@
 <ol start="2">
 <li><strong>同步方法</strong></li>
 </ol>
-<p><img src="D:%5Cnodejs%5Cblog%5Csource%5Cimages%5Cimage-20200727170350933.png" alt="image-20200727170350933"></p>
+<p><img src="/images/image-20200727170350933.png" alt="image-20200727170350933"></p>
 <p>可以看到在add方法的flags里面多了一个<code>ACC_SYNCHRONIZED</code>标志，这标志用来告诉JVM这是一个同步方法，在进入该方法之前先获取相应的锁，锁的计数器加1，方法结束后计数器-1，如果获取失败就阻塞住，知道该锁被释放。</p>
 <h3 id="4、synchronized锁的底层实现"><a href="#4、synchronized锁的底层实现" class="headerlink" title="4、synchronized锁的底层实现"></a>4、synchronized锁的底层实现</h3><p>在JVM中，对象是分成三部分存在的：对象头、实例数据、对其填充。</p>
-<p><img src="D:%5Cnodejs%5Cblog%5Csource%5Cimages%5Cimage-20200727170453599.png" alt="image-20200727170453599"></p>
+<p><img src="/images/image-20200727170453599.png" alt="image-20200727170453599"></p>
 <p><strong>实例数据</strong>存放类的属性数据信息，包括父类的属性信息，如果是数组的实例部分还包括数组的长度，这部分内存按4字节对齐；<strong>对其填充</strong>不是必须部分，由于虚拟机要求对象起始地址必须是8字节的整数倍，对齐填充仅仅是为了使字节对齐。</p>
 <p>对象头是我们需要关注的重点，它是synchronized实现锁的基础，因为synchronized申请锁、上锁、释放锁都与对象头有关。对象头主要结构是由<code>Mark Word</code> 和 <code>Class Metadata Address</code>组成，<strong>其中</strong><code>Mark Word</code><strong>存储对象的hashCode、锁信息或分代年龄或GC标志等信息</strong>，<code>Class Metadata Address</code><strong>是类型指针指向对象的类元数据，JVM通过该指针确定该对象是哪个类的实例</strong>。</p>
 <p>锁也分不同状态，JDK6之前只有两个状态：无锁、有锁（重量级锁），而在JDK6之后对synchronized进行了优化，新增了两种状态，总共就是四个状态：<strong>无锁状态、偏向锁、轻量级锁、重量级锁</strong>，其中无锁就是一种状态了。锁的类型和状态在对象头<code>Mark Word</code>中都有记录，在申请锁、锁升级等过程中JVM都需要读取对象的<code>Mark Word</code>数据。</p>
